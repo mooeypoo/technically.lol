@@ -1,0 +1,72 @@
+---
+interface Props {
+  text: string;
+  icon?: string;
+}
+
+// import { Debug } from 'astro:components';
+import { Image } from 'astro:assets';
+
+const images = {
+  'css': () => import('/src/assets/icon-css.png'),
+  'html': () => import('/src/assets/icon-html.png'),
+  'js': () => import('/src/assets/icon-js.png'),
+}
+const { icon, text } = Astro.props;
+
+const iconSrc = images[icon || 'html'];
+---
+<div class="menu-item">
+  <div class="menu-item-icon">
+    <Image
+      src={iconSrc()}
+      alt="CSS icon"
+      width="25"
+      height=""
+    />
+  </div>
+  <div class="menu-item-text">
+    <span>{text}</span>
+  </div>
+</div>
+
+<style lang="scss">
+  .menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+
+    &-icon img {
+      width: 25px;
+      height: 25px;
+    }
+
+    &-text {
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    @media screen and (max-width: 950px) {
+      &-icon img {
+        width: 20px;
+        height: 20px;
+      }
+
+      &-text {
+        font-size: 0.9em;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      &-icon img {
+        width: 16px;
+        height: 16px;
+      }
+
+      &-text {
+        font-size: 0.8em;
+      }
+    }
+
+  }
+</style>
