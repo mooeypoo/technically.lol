@@ -1,0 +1,62 @@
+---
+import Logo from "../components/Logo.astro";
+import Menu from "../components/Menu.astro";
+import ContentContainer from "../components/ContentContainer.astro";
+const { page } = Astro.props;
+// import { Debug } from 'astro:components';
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Moriel Schottlender: Technically Funny</title>
+	</head>
+	<body>
+		<Logo />
+		<Menu page={page}/>
+		<ContentContainer>
+      <slot />
+		</ContentContainer>
+		<div class="moriel-corner"></div>
+	</body>
+</html>
+
+<style lang="scss" is:global>
+	body {
+		background-color: #22191f;
+		color: #fff;
+		margin: 0;
+		padding: 2em;
+	}
+
+	.moriel-corner {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		height: 700px;
+		width: 700px;
+		background-image: url(/src/assets/moriel-corner.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+		@media screen and (max-width: 950px) {
+			width: 600px;
+			height: 600px;
+		}
+
+		// Midway point where the content is too narrow
+    @media screen and (max-width: 750px) {
+			z-index: -1;
+			opacity: 0.4;
+		}
+
+		@media screen and (max-width: 400px) {
+			width: 350px;
+			height: 350px;
+		}
+	}
+</style>

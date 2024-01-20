@@ -4,7 +4,7 @@ interface Props {
   icon?: string;
 }
 
-// import { Debug } from 'astro:components';
+import { Debug } from 'astro:components';
 import { Image } from 'astro:assets';
 
 const images = {
@@ -12,11 +12,11 @@ const images = {
   'html': () => import('/src/assets/icon-html.png'),
   'js': () => import('/src/assets/icon-js.png'),
 }
-const { icon, text } = Astro.props;
+const { icon, name, text, currentPage } = Astro.props;
 
 const iconSrc = images[icon || 'html'];
 ---
-<div class="menu-item">
+<div class:list={['menu-item', { active: currentPage === name }]}>
   <div class="menu-item-icon">
     <Image
       src={iconSrc()}
@@ -25,7 +25,7 @@ const iconSrc = images[icon || 'html'];
       height=""
     />
   </div>
-  <div class="menu-item-text">
+  <div class='menu-item-text'>
     <span>{text}</span>
   </div>
 </div>
@@ -36,6 +36,11 @@ const iconSrc = images[icon || 'html'];
     flex-direction: row;
     align-items: center;
     gap: 0.5em;
+
+    &.active {
+      color: cyan;
+      font-weight: bold;
+    }
 
     &-icon img {
       width: 25px;
