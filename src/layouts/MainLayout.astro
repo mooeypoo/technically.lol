@@ -2,7 +2,7 @@
 import Logo from "../components/Logo.astro";
 import Menu from "../components/Menu.astro";
 import ContentContainer from "../components/ContentContainer.astro";
-const { page } = Astro.props;
+const { page, align } = Astro.props;
 // import { Debug } from 'astro:components';
 
 ---
@@ -18,7 +18,7 @@ const { page } = Astro.props;
 	<body>
 		<Logo />
 		<Menu page={page}/>
-		<ContentContainer>
+		<ContentContainer align={align}>
       <slot />
 		</ContentContainer>
 		<div class="moriel-corner"></div>
@@ -66,6 +66,30 @@ const { page } = Astro.props;
 		@media screen and (max-width: 400px) {
 			width: 350px;
 			height: 350px;
+		}
+	}
+
+	/* Global */
+	.rainbow {
+		font-weight: bold;
+		animation: colorRotate 1s linear 0s infinite;
+	}
+
+	@keyframes colorRotate {
+		from {
+			color: #6666ff;
+		}
+		10% {
+			color: #0099ff;
+		}
+		50% {
+			color: #ff5eff;
+		}
+		75% {
+			color: #ff3399;
+		}
+		100% {
+			color: #6666ff;
 		}
 	}
 </style>

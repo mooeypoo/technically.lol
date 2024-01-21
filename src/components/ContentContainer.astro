@@ -1,6 +1,11 @@
 ---
+const { align } = Astro.props;
+let alignstyle = '';
+if (align === 'center') {
+  alignstyle = 'align-items: center';
+}
 ---
-<div class="content-container">
+<div class="content-container" style={alignstyle}>
   <slot></slot>
 </div>
 
