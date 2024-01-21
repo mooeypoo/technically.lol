@@ -1,8 +1,16 @@
 ---
 import { Image } from 'astro:assets';
+import logoImage from '../assets/logo.png';
 ---
 <div class="logo">
-  <div class="logo-image"><Image src="/src/assets/logo.png" width="500" height="72" alt="logo" /></div>
+  <div class="logo-image">
+    <Image
+      src={logoImage}
+      width="500"
+      height="72"
+      alt="logo"
+    />
+  </div>
   <h1 class="logo-subtitle">technically funny.</h1>
 </div>
 
