@@ -1,20 +1,22 @@
 ---
 interface Props {
+  name: string;
   text: string;
+  currentPage: string;
   icon?: string;
 }
 
-import { Debug } from 'astro:components';
+// import { Debug } from 'astro:components';
 import { Image } from 'astro:assets';
 
-const images = {
+const images: {[key: string]: () => Promise<{ default: string }>} = {
   'css': () => import('/src/assets/icon-css.png'),
   'html': () => import('/src/assets/icon-html.png'),
   'js': () => import('/src/assets/icon-js.png'),
 }
 const { icon, name, text, currentPage } = Astro.props;
 
-const iconSrc = images[icon || 'html'];
+const iconSrc: Function = images[icon || 'html'];
 ---
 <div class:list={['menu-item', { active: currentPage === name }]}>
   <div class="menu-item-icon">
@@ -22,7 +24,6 @@ const iconSrc = images[icon || 'html'];
       src={iconSrc()}
       alt="CSS icon"
       width="25"
-      height=""
     />
   </div>
   <div class='menu-item-text'>
