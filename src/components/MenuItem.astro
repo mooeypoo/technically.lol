@@ -16,6 +16,7 @@ const images: {[key: string]: () => Promise<typeof import('*.png')>} = {
   'js': () => import('/src/assets/icon-js.png'),
 }
 const iconSrc: () => Promise<typeof import('*.png')> = images[icon || 'html'];
+const link = '/' + (name === 'index' ? '' : name);
 ---
 <div class:list={['menu-item', { active: currentPage === name }]}>
   <div class="menu-item-icon">
@@ -26,7 +27,7 @@ const iconSrc: () => Promise<typeof import('*.png')> = images[icon || 'html'];
     />
   </div>
   <div class='menu-item-text'>
-    <span>{text}</span>
+    <a href={link}>{text}</a>
   </div>
 </div>
 
@@ -36,10 +37,16 @@ const iconSrc: () => Promise<typeof import('*.png')> = images[icon || 'html'];
     flex-direction: row;
     align-items: center;
     gap: 0.5em;
+    padding: 0.2em;
 
     &.active {
-      color: cyan;
-      font-weight: bold;
+      background-color: #352f2f;
+      border-radius: 0.5em;
+
+      a {
+        color: cyan;
+        font-weight: bold;
+      }
     }
 
     &-icon img {

@@ -5,8 +5,8 @@ const { page } = Astro.props;
 ---
 <div class="menu">
   <MenuItem icon="js" name="index" text="about_me.js" currentPage={page}></MenuItem>
-  <MenuItem icon="html" name="videos" text="funny_videos.html" currentPage={page}></MenuItem>
-  <MenuItem icon="css" name="invite" text="invite_me_to_your_event.css" currentPage={page}></MenuItem>
+  <MenuItem icon="css" name="videos" text="funny_videos.css" currentPage={page}></MenuItem>
+  <MenuItem icon="html" name="invite" text="invite_me_to_your_event.html" currentPage={page}></MenuItem>
 
 </div>
 
@@ -22,10 +22,12 @@ const { page } = Astro.props;
     justify-content: center;
     justify-content: center;
     gap: 1.5em;
+    background-color: #212121;
+    padding: 0.5em;
 
     @media screen and (max-width: 950px) {
       top: 8em;
-      gap: 1em;
+      gap: 0.8em;
     }
 
     @media screen and (max-width: 400px) {
