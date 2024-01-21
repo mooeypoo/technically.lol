@@ -21,7 +21,7 @@ const iconSrc: () => Promise<typeof import('*.png')> = images[icon || 'html'];
   <div class="menu-item-icon">
     <Image
       src={iconSrc()}
-      alt="CSS icon"
+      alt=`${icon} icon`
       width="25"
     />
   </div>
