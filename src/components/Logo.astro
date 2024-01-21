@@ -1,16 +1,12 @@
 ---
 import { Image } from 'astro:assets';
-import imgLogo from "../assets/logo.png";
-
-const imgWidth = imgLogo.width; // 500
-const imgHeight = imgLogo.height; // 72
 ---
 <div class="logo">
-  <div class="logo-image"><Image src="/src/assets/logo.png" width={imgWidth} height={imgHeight} alt="logo" /></div>
+  <div class="logo-image"><Image src="/src/assets/logo.png" width="500" height="72" alt="logo" /></div>
   <h1 class="logo-subtitle">technically funny.</h1>
 </div>
 
-<style lang="scss" define:vars={{ imgWidth, imgHeight }}>
+<style lang="scss">
   .logo {
 		position: fixed;
     display: flex;
