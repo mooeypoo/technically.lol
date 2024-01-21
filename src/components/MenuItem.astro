@@ -3,7 +3,7 @@ interface Props {
   name: string;
   text: string;
   currentPage: string;
-  icon?: string;
+  icon?: keyof typeof images
 }
 
 // import { Debug } from 'astro:components';
@@ -15,8 +15,7 @@ const images: {[key: string]: () => Promise<typeof import('*.png')>} = {
   'html': () => import('/src/assets/icon-html.png'),
   'js': () => import('/src/assets/icon-js.png'),
 }
-
-const iconSrc: Promise<typeof import('*.png')> = images[icon || 'html'];
+const iconSrc: () => Promise<typeof import('*.png')> = images[icon || 'html'];
 ---
 <div class:list={['menu-item', { active: currentPage === name }]}>
   <div class="menu-item-icon">
