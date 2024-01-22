@@ -1,4 +1,5 @@
 ---
+// @ts-nocheck
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
@@ -20,7 +21,7 @@ import MainLayout from "../layouts/MainLayout.astro";
       <label>If you're inviting me to an event, tell me about it</label>
       <textarea name="event_details"></textarea>
     </div>
-    <div>
+    <div class="form-button">
       <button type="submit">Send</button>
     </div>
   </form>
@@ -54,18 +55,47 @@ import MainLayout from "../layouts/MainLayout.astro";
     padding: 0;
   }
 
+  textarea,
+  input {
+    border: 1px solid #E91E63;
+    background-color: #212121;
+    font-size: 1em;
+    padding: 0.5em;
+    border-radius: 1em;    
+    width: calc(100% - 1em - 1em);
+  }
+
+  textarea {
+    min-height: 5em;
+  }
+
+  button {
+    background-color: #E91E63;
+    border: 1px solid #212121;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    color: #fff;
+  }
+
+  .form-button {
+    display: flex;
+    justify-content: center;
+  }
+
   @media screen and (max-width: 750px) {
     h1 {
       font-size: 1.2em;
-      margin: 0.2em 0 0;
     }
     h2 {
       font-size: 0.8em;
     }
     form {
-      margin-top: 0.2em;
-      font-size: 0.8em;
+      margin-top: 1em;
     }
+
   }
 
 </style>
