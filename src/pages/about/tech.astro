@@ -1,0 +1,23 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Switcher from "../../components/Switcher.astro";
+---
+
+<MainLayout pageName="index">
+	<Switcher who="tech" />
+	<p>
+		I'm a Software Engineer that takes <span class="rainbow">Team Standup</span> to the next level.
+	</p>
+  <p>I am with you in the trenches tracking a bug with <code>git blame</code> just to discover <span class="rainbow">it's my code</span></p>
+  <p>I'm the one that <span class="rainbow">wrote the code</span> that you're <span class="rainbow">debugging</span> right now.</p>
+  <p>And Tech can be <span class="rainbow">technically funny.</span></p>
+
+  <div class="contact-me">
+		Want more? <a href="videos">watch my videos,</a> or <a href="/invite">invite me to your event!</a>
+	</div>
+
+  <p class="smaller">Also, I totally <a href="https://github.com/mooeypoo/technically.lol/" target="_blank">made this website</a>. </p>
+</MainLayout>
+
+<style lang="scss">
+</style>

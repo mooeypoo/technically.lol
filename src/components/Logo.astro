@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets';
+import logoImage from '../assets/logo.png';
+---
+<div class="logo">
+  <div class="logo-image">
+    <Image
+      src={logoImage}
+      width="500"
+      alt="Moriel Schottlender"
+    />
+  </div>
+  <h1 class="logo-subtitle">technically funny.</h1>
+</div>
+
+<style lang="scss">
+  .logo {
+		position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+		top: 1em;
+    left: 0;
+    width: 100%;
+		// left: 25em;
+
+    h1 {
+      display: inline-block;
+      font-family: 'Courier New', Courier, monospace;
+      overflow: hidden; /* Ensures the content is not revealed until the animation */
+      border-right: .15em solid orange; /* The typwriter cursor */
+      white-space: nowrap; /* Keeps the content on a single line */
+      margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+      letter-spacing: .15em; /* Adjust as needed */
+      animation: 
+        // typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+    }
+
+    @media screen and (max-width: 950px) {
+      img {
+        width: 375px; // var(--imgWidth) * 0.75;
+        height: 54px; // var(--imgHeight) * 0.75;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      left: 0;
+      width: 100%;
+
+      h1 {
+        font-size: 1.2em;
+      }
+
+      img {
+        width: 250px; // var(--imgWidth) / 2;
+        height: 36px; // var(--imgHeight) / 2;
+      }
+    }
+	}
+</style>
+
+<style is:global>
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+</style>

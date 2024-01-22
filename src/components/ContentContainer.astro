@@ -1,0 +1,53 @@
+---
+const { align } = Astro.props;
+let alignstyle = '';
+if (align === 'center') {
+  alignstyle = 'align-items: center';
+}
+---
+<div class="content-container" style={alignstyle}>
+  <slot></slot>
+</div>
+
+<style lang="scss">
+  .content-container {
+    // border: 1px solid #f1f1f1;
+    display: flex;
+    position: fixed;
+    border-top: 0.2em #e91e63 double;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    top: 12em;
+    left: 25em;
+    overflow: auto;
+    max-width: 45em;
+    flex-direction: column;
+    // 30em = left; 2em = margin right
+    width: calc(100% - 25em - 2em);
+    // 14em = top;
+    height: calc(100vh - 12em);
+
+    @media screen and (max-width: 950px) {
+      // 30em = left; 2em = margin right
+      width: calc(100% - 21em - 2em);
+      // 12em = top; 
+      height: calc(100vh - 12em);
+      left: 21em;
+      top: 12em;
+      font-size: 1em;
+    }
+
+    // Midway point where the content is too narrow
+    @media screen and (max-width: 600px) {
+    // @media screen and (max-width: 400px) {
+      // 1em = left; 1em = margin right
+      width: calc(100% - 1em - 1em);
+      left: 1em;
+      top: 14em; // at this width, menu tends to wrap
+    }
+
+    @media screen and (max-width: 400px) {
+      top: 11em;
+    }
+}
+</style>
