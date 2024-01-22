@@ -1,41 +1,10 @@
 ---
-// @ts-nocheck
 import MainLayout from "../layouts/MainLayout.astro";
 import Switcher from "../components/Switcher.astro";
 ---
 
 <MainLayout pageName="index">
 	<Switcher who="general" />
-	<form
-		netlify
-		data-netlify="true"
-		netlify-honeypot="bot-field"
-		name="Contact"
-		method="POST"
-		action="/success"
->
-  <p class="hidden">
-    <label>
-      Don't fill this out if you're human: <input name="bot-field" />
-    </label>
-  </p>
-  <input type="hidden" name="form-name" value="Contact" />
-  <div>
-    <label>Name*</label><input type="text" name="name" required />
-  </div>
-  <div>
-    <label>Email*</label><input type="email" name="email" required />
-  </div>
-  <div>
-    <label>Message*</label>
-    <textarea name="message" required></textarea>
-  </div>
-  <div>
-    <label>If you're inviting me to an event, tell me about it</label>
-    <textarea name="event_details"></textarea>
-  </div>
-  <button type="submit">Send</button>
-</form>
 	<p>
 		I'm a Software Engineer that can make you laugh about
 		working <span class="rainbow">in Tech</span>, working <span class="rainbow">with Tech</span>,	or working <span class="rainbow">on Tech</span>.</span>
