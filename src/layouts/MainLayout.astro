@@ -4,6 +4,7 @@ import Menu from "../components/Menu.astro";
 import ContentContainer from "../components/ContentContainer.astro";
 const { pageName, align } = Astro.props;
 // import { Debug } from 'astro:components';
+import { SEO } from "astro-seo";
 
 const who = Astro.url.searchParams.get('scale')! || 'general';
 ---
@@ -16,6 +17,33 @@ const who = Astro.url.searchParams.get('scale')! || 'general';
       href="/favicon.png">
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<SEO
+      title="Moriel Schottlender: Technically Funny"
+      description="A very funny website for a technically funny engineer comic."
+      openGraph={{
+        basic: {
+          title: "Moriel Schottlender: Technically Funny",
+          type: "website",
+          image: "https://technically.lol/moriel.png",
+        }
+      }}
+      twitter={{
+        creator: "@jonasmerlins1"
+      }}
+      extend={{
+        // extending the default link tags
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        // extending the default meta tags
+        meta: [
+          {
+            name: "twitter:image",
+            content: "https://technically.lol/moriel.png",
+          },
+          { name: "twitter:title", content: "Moriel Schottlender: Technically Funny" },
+          { name: "twitter:description", content: "Agent" },
+        ],
+      }}
+    />
 		<title>Moriel Schottlender: Technically Funny</title>
 	</head>
 	<body>
