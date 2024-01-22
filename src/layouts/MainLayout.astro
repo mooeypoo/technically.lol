@@ -2,9 +2,10 @@
 import Logo from "../components/Logo.astro";
 import Menu from "../components/Menu.astro";
 import ContentContainer from "../components/ContentContainer.astro";
-const { page, align } = Astro.props;
+const { pageName, align } = Astro.props;
 // import { Debug } from 'astro:components';
 
+const who = Astro.url.searchParams.get('scale')! || 'general';
 ---
 
 <html lang="en">
@@ -17,8 +18,8 @@ const { page, align } = Astro.props;
 	</head>
 	<body>
 		<Logo />
-		<Menu page={page}/>
-		<ContentContainer align={align}>
+		<Menu pageName={pageName}/>
+		<ContentContainer align={align} who={who}>
       <slot />
 		</ContentContainer>
 		<div class="moriel-corner"></div>
@@ -40,6 +41,41 @@ const { page, align } = Astro.props;
 		&:hover {
 			text-decoration: underline;
 		}
+
+		&[target="_blank"]::after {
+			content: "[↗]";
+			font-size: 0.5em;
+			vertical-align: super;
+			padding-left: 0.2em;
+		}
+	}
+
+	.content-container {
+		a {
+			text-decoration: underline;
+		}
+
+		.contact-me {
+			margin-top: 2em;
+			text-align: center;
+			padding: 1em 0;
+			border-top: #ff3399 1px solid;
+			border-bottom: #ff3399 1px solid;
+		}
+
+		p {
+			margin: 1em 0 0;
+		}
+
+	}
+
+	.emphasis {
+		font-weight: bold;
+		font-size: 1.2em;
+	}
+
+	.smaller {
+		font-size: 0.8em;
 	}
 
 	.moriel-corner {
@@ -51,6 +87,7 @@ const { page, align } = Astro.props;
 		background-image: url(/src/assets/moriel-corner.png);
     background-size: contain;
     background-repeat: no-repeat;
+		z-index: -1;
 
 		@media screen and (max-width: 950px) {
 			width: 600px;
@@ -59,7 +96,6 @@ const { page, align } = Astro.props;
 
 		// Midway point where the content is too narrow
     @media screen and (max-width: 750px) {
-			z-index: -1;
 			opacity: 0.4;
 		}
 

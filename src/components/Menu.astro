@@ -1,13 +1,12 @@
 ---
 import MenuItem from "../components/MenuItem.astro";
 
-const { page } = Astro.props;
+const { pageName } = Astro.props;
 ---
 <div class="menu">
-  <MenuItem icon="js" name="index" text="about_me.js" currentPage={page}></MenuItem>
-  <MenuItem icon="css" name="videos" text="funny_videos.css" currentPage={page}></MenuItem>
-  <MenuItem icon="html" name="invite" text="invite_me_to_your_event.html" currentPage={page}></MenuItem>
-
+  <MenuItem icon="js" name="index" text="index.js" currentPage={pageName}></MenuItem>
+  <MenuItem icon="css" name="videos" text="funny_videos.css" currentPage={pageName}></MenuItem>
+  <MenuItem icon="html" name="invite" text="invite_me_to_your_event.html" currentPage={pageName}></MenuItem>
 </div>
 
 <style lang="scss">

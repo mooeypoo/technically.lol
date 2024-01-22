@@ -1,5 +1,5 @@
 ---
-const { align } = Astro.props;
+const { align, who } = Astro.props;
 let alignstyle = '';
 if (align === 'center') {
   alignstyle = 'align-items: center';
@@ -33,9 +33,10 @@ if (align === 'center') {
       // 30em = left; 2em = margin right
       width: calc(100% - 21em - 2em);
       // 12em = top; 2em = margin bottom
-      height: calc(100vh - 10em - 2em);
+      height: calc(100vh - 12em - 2em);
       left: 21em;
-      top: 10em;
+      top: 12em;
+      font-size: 1em;
     }
 
     // Midway point where the content is too narrow
@@ -44,7 +45,7 @@ if (align === 'center') {
       // 1em = left; 1em = margin right
       width: calc(100% - 1em - 1em);
       left: 1em;
-      top: 12em; // at this width, menu tends to wrap
+      top: 14em; // at this width, menu tends to wrap
     }
 
     @media screen and (max-width: 400px) {

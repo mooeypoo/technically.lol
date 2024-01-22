@@ -2,14 +2,70 @@
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout page="invite">
-	<p>.</p>
-	<p>.</p>
-	<p>.</p>
-	<p>.</p>
-	<p>.</p>
-	<p>.</p>
-	<p>.</p>
-	<p>.</p>
-	<p>.</p>
+<MainLayout pageName="invite">
+  <h1>Contact me</h1>
+  <h2>... Talk nerdy to me</h2>
+  <form name="contact" netlify>
+    <div>
+      <label>Name</label><input type="text" name="name" />
+    </div>
+    <div>
+      <label>Email</label><input type="email" name="email" />
+    </div>
+    <div>
+      <label>Message</label>
+      <textarea name="message"></textarea>
+    </div>
+    <div>
+      <label>If you're inviting me to an event, tell me about it</label>
+      <textarea name="event_details"></textarea>
+    </div>
+    <div>
+      <button type="submit">Send</button>
+    </div>
+  </form>
 </MainLayout>
+
+<style lang="scss">
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1em;
+    font-size: 0.9em;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  h1 {
+    font-size: 2em;
+    margin: 0.5em 0 0;
+    padding: 0;
+  }
+
+  h2 {
+    font-size: 1em;
+    color: #666;
+    margin: 0;
+    padding: 0;
+  }
+
+  label {
+    display: block;
+    margin: 0 0 0.2em;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 750px) {
+    h1 {
+      font-size: 1.2em;
+      margin: 0.2em 0 0;
+    }
+    h2 {
+      font-size: 0.8em;
+    }
+    form {
+      margin-top: 0.2em;
+      font-size: 0.8em;
+    }
+  }
+
+</style>

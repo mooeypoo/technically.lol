@@ -1,0 +1,72 @@
+---
+const { who } = Astro.props;
+
+---
+<div class="switcher">
+  <div class="switcher-label">Audience:</div>
+  <div class="switcher-options-container">
+    <div class:list={['switcher-option', { active: who === 'general' }]}>
+      <a class="switcher-label" href="/">General</a>
+    </div>
+    
+    <div class:list={['switcher-option', { active: who === 'tech' }]}>
+      <a class="switcher-label" href="/about/tech">Tech</a>
+    </div>
+    
+    <div class:list={['switcher-option', { active: who === 'management' }]}>
+      <a class="switcher-label" href="/about/management">Management</a>
+    </div>
+
+    <div class:list={['switcher-option', { active: who === 'techbros' }]}>
+      <a class="switcher-label" href="/about/techbros">Tech Bros</a>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .switcher {
+    display: flex;
+    justify-content: center;
+    gap: 0 1em;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2px 3px;
+    border-radius: 20px;
+    position:relative;
+    border: 2px solid #95A5A6;
+    background-color: #212121;
+
+    &-options-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      
+    }
+
+    &-option {
+      padding: 0.2em 1em;
+
+      a {
+        font-family: sans-serif;
+        display: inline-block;
+        color: #adadad;
+        text-decoration: none;
+
+        text-align: center;
+        font-family: sans-serif;
+        display: inline-block;
+        color: #fff;
+        position:relative;
+        z-index:2;
+        margin: 0;
+        text-align: center;
+        font-size: 15px;
+      }
+
+      &.active {
+        background-color: #da237e;
+        border-radius: 20px;
+      }
+    }
+  }
+</style>
