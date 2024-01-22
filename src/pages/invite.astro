@@ -6,8 +6,8 @@ import MainLayout from "../layouts/MainLayout.astro";
   <h1>Contact me</h1>
   <h2>... Talk nerdy to me</h2>
   <form
-    netlify-honeypot="bot-field"
     data-netlify="true"
+    netlify-honeypot
     name="Contact"
     method="POST"
     action="/success"
@@ -19,22 +19,20 @@ import MainLayout from "../layouts/MainLayout.astro";
     </p>
     <input type="hidden" name="form-name" value="Contact" />
     <div>
-      <label>Name</label><input type="text" name="name" />
+      <label>Name*</label><input type="text" name="name" required />
     </div>
     <div>
-      <label>Email</label><input type="email" name="email" />
+      <label>Email*</label><input type="email" name="email" required />
     </div>
     <div>
-      <label>Message</label>
-      <textarea name="message"></textarea>
+      <label>Message*</label>
+      <textarea name="message" required></textarea>
     </div>
     <div>
       <label>If you're inviting me to an event, tell me about it</label>
       <textarea name="event_details"></textarea>
     </div>
-    <div class="form-button">
-      <button type="submit">Send</button>
-    </div>
+    <button type="submit">Send</button>
   </form>
 </MainLayout>
 
@@ -99,11 +97,6 @@ import MainLayout from "../layouts/MainLayout.astro";
     padding: 0.5em 1em;
     border-radius: 1em;
     color: #fff;
-  }
-
-  .form-button {
-    display: flex;
-    justify-content: center;
   }
 
   @media screen and (max-width: 750px) {
