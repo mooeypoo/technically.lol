@@ -10,7 +10,10 @@ import logoImage from '../assets/logo.png';
       alt="Moriel Schottlender"
     />
   </div>
-  <h1 class="logo-subtitle">technically funny.</h1>
+  <div class="logo-subtitle-wrapper">
+    <h1 class="logo-subtitle">"Technically funny."</h1>
+    <h2 class="quote-author"> &mdash; ChatGPT</h2>
+  </div>
 </div>
 
 <style lang="scss">
@@ -25,17 +28,29 @@ import logoImage from '../assets/logo.png';
     width: 100%;
 		// left: 25em;
 
-    h1 {
-      display: inline-block;
+    &-subtitle-wrapper {
+      display: flex;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.5em;
       font-family: 'Courier New', Courier, monospace;
-      overflow: hidden; /* Ensures the content is not revealed until the animation */
-      border-right: .15em solid orange; /* The typwriter cursor */
-      white-space: nowrap; /* Keeps the content on a single line */
-      margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-      letter-spacing: .15em; /* Adjust as needed */
-      animation: 
-        // typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;
+
+      h1 {
+        display: inline-block;
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: .15em solid orange; /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0; /* Gives that scrolling effect as the typing happens */
+        letter-spacing: .15em; /* Adjust as needed */
+        animation: 
+          // typing 3.5s steps(40, end),
+          blink-caret .75s step-end infinite;
+      }
+      h2 {
+        margin: 0;
+        font-size: 1em;
+      }
     }
 
     @media screen and (max-width: 950px) {
@@ -53,8 +68,14 @@ import logoImage from '../assets/logo.png';
       left: 0;
       width: 100%;
 
-      h1 {
-        font-size: 1.2em;
+      &-subtitle-wrapper {
+        gap: 0;
+        h1 {
+          font-size: 1.2em;
+        }
+        h2 {
+          font-size: 0.8em;
+        }
       }
 
       img {
