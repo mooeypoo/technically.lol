@@ -4,7 +4,7 @@ import netlify from "@astrojs/netlify"
 
 // https://astro.build/config
 export default defineConfig({
-  output: "hybrid", //"server",
+  output: "server",// "hybrid",
   adapter: netlify(),
   redirects: {
     '/about': '/'
