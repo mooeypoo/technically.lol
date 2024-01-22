@@ -1,0 +1,86 @@
+<form
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  name="Contact"
+  method="POST"
+  action="/success"
+>
+  <p class="hidden">
+    <label>
+      Don't fill this out if you're human: <input name="bot-field" />
+    </label>
+  </p>
+  <input type="hidden" name="form-name" value="Contact" />
+  <div>
+    <label>Name*</label><input type="text" name="name" required />
+  </div>
+  <div>
+    <label>Email*</label><input type="email" name="email" required />
+  </div>
+  <div>
+    <label>Message*</label>
+    <textarea name="message" required></textarea>
+  </div>
+  <div>
+    <label>If you're inviting me to an event, tell me about it</label>
+    <textarea name="event_details"></textarea>
+  </div>
+  <button type="submit">Send</button>
+</form>
+
+<style lang="scss">
+  .hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1em;
+    font-size: 0.9em;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  label {
+    display: block;
+    margin: 0 0 0.2em;
+    padding: 0;
+  }
+
+  textarea,
+  input {
+    border: 1px solid #E91E63;
+    background-color: #212121;
+    color: #fff;
+    font-size: 1em;
+    padding: 0.5em;
+    border-radius: 1em;    
+    width: calc(100% - 1em - 1em);
+  }
+
+  textarea {
+    min-height: 5em;
+  }
+
+  button {
+    background-color: #E91E63;
+    border: 1px solid #212121;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 750px) {
+    form {
+      margin-top: 1em;
+    }
+  }
+</style>
