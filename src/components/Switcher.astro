@@ -3,7 +3,7 @@ const { who } = Astro.props;
 
 ---
 <div class="switcher">
-  <div class="switcher-label">Audience:</div>
+  <div class="switcher-label">I speak to different audiences -- pick yours:</div>
   <div class="switcher-options-container">
     <div class:list={['switcher-option', { active: who === 'general' }]}>
       <a class="switcher-label" href="/">General</a>
@@ -35,6 +35,16 @@ const { who } = Astro.props;
     position:relative;
     border: 2px solid #95A5A6;
     background-color: #212121;
+    margin-top: 0.5em;
+
+    &-label {
+      font-family: sans-serif;
+      display: inline-block;
+      color: #adadad;
+      text-decoration: none;
+      padding: 0.2em;
+      font-size: 0.8em;
+    }
 
     &-options-container {
       display: flex;

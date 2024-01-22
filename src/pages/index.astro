@@ -4,7 +4,6 @@ import Switcher from "../components/Switcher.astro";
 ---
 
 <MainLayout pageName="index">
-	<Switcher who="general" />
 	<p>
 		I'm a Software Engineer that can make you laugh about
 		working <span class="rainbow">in Tech</span>, working <span class="rainbow">with Tech</span>,	or working <span class="rainbow">on Tech</span>.</span>
@@ -16,10 +15,12 @@ import Switcher from "../components/Switcher.astro";
 		<li>Your friends who do know how to use technology? They're <span class="rainbow">Technically Funny.</span></li>
 		<li>I <em>am</em> technology. I am <span class="rainbow">"technically" "funny."</span></li>
 	</ul>
+	<Switcher who="general" />
 	<div class="contact-me">
 		Want more? <a href="videos">watch my videos,</a> or <a href="/invite">invite me to your event!</a>
 	</div>
 	<p class="smaller">I mean... Look at this website. I totally <a href="https://github.com/mooeypoo/technically.lol/" target="_blank">made it</a>. </p>
+
 </MainLayout>
 
 <style lang="scss">
