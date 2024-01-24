@@ -25,10 +25,13 @@ const who = Astro.url.searchParams.get('scale')! || 'general';
           title: "Moriel Schottlender: Technically Funny",
           type: "website",
           image: "https://technically.lol/moriel.png",
+					url: "https://technically.lol",
+				},
         }
       }}
       twitter={{
-        creator: "@jonasmerlins1"
+        creator: "@mooeypoo",
+				description: "A very funny website for a technically funny engineer comic.",
       }}
       extend={{
         // extending the default link tags
@@ -40,7 +43,7 @@ const who = Astro.url.searchParams.get('scale')! || 'general';
             content: "https://technically.lol/moriel.png",
           },
           { name: "twitter:title", content: "Moriel Schottlender: Technically Funny" },
-          { name: "twitter:description", content: "Agent" },
+          { name: "twitter:description", content: "A very funny website for a technically funny engineer comic." },
         ],
       }}
     />
