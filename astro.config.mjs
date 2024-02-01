@@ -8,5 +8,6 @@ export default defineConfig({
   // adapter: netlify(), <-- this doesn't work for Netlify Forms :(
   redirects: {
     '/about': '/'
-  }
+  },
+  site: 'https://technically.lol',
 });
