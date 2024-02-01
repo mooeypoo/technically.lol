@@ -10,14 +10,14 @@ const who = Astro.url.searchParams.get('scale')! || 'general';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" 
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon"
       type="image/png" 
       href="/favicon.png">
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<SEO
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO
       title="Moriel Schottlender: Technically Funny"
       description="A very funny website for a technically funny engineer comic."
       openGraph={{
@@ -25,13 +25,13 @@ const who = Astro.url.searchParams.get('scale')! || 'general';
           title: "Moriel Schottlender: Technically Funny",
           type: "website",
           image: "https://technically.lol/moriel.png",
-					url: "https://technically.lol",
-				},
+          url: "https://technically.lol",
+        },
         }
       }}
       twitter={{
         creator: "@mooeypoo",
-				description: "A very funny website for a technically funny engineer comic.",
+        description: "A very funny website for a technically funny engineer comic.",
       }}
       extend={{
         // extending the default link tags
@@ -47,118 +47,118 @@ const who = Astro.url.searchParams.get('scale')! || 'general';
         ],
       }}
     />
-		<title>Moriel Schottlender: Technically Funny</title>
-	</head>
-	<body>
-		<Logo />
-		<Menu pageName={pageName}/>
-		<ContentContainer align={align} who={who}>
+    <title>Moriel Schottlender: Technically Funny</title>
+  </head>
+  <body>
+    <Logo />
+    <Menu pageName={pageName}/>
+    <ContentContainer align={align} who={who}>
       <slot />
-		</ContentContainer>
-		<div class="moriel-corner"></div>
-	</body>
+    </ContentContainer>
+    <div class="moriel-corner"></div>
+  </body>
 </html>
 
 <style lang="scss" is:global>
-	body {
-		background-color: #22191f;
-		color: #fff;
-		margin: 0;
-		padding: 2em;
-	}
+  body {
+    background-color: #22191f;
+    color: #fff;
+    margin: 0;
+    padding: 2em;
+  }
 
-	a {
-		color: #fff;
-		text-decoration: none;
+  a {
+    color: #fff;
+    text-decoration: none;
 
-		&:hover {
-			text-decoration: underline;
-		}
+    &:hover {
+      text-decoration: underline;
+    }
 
-		&[target="_blank"]::after {
-			content: "[↗]";
-			font-size: 0.5em;
-			vertical-align: super;
-			padding-left: 0.2em;
-		}
-	}
+    &[target="_blank"]::after {
+      content: "[↗]";
+      font-size: 0.5em;
+      vertical-align: super;
+      padding-left: 0.2em;
+    }
+  }
 
-	.content-container {
-		a {
-			text-decoration: underline;
-		}
+  .content-container {
+    a {
+      text-decoration: underline;
+    }
 
-		.contact-me {
-			margin-top: 2em;
-			text-align: center;
-			padding: 1em 0;
-			border-top: #ff3399 1px solid;
-			border-bottom: #ff3399 1px solid;
-		}
+    .contact-me {
+      margin-top: 2em;
+      text-align: center;
+      padding: 1em 0;
+      border-top: #ff3399 1px solid;
+      border-bottom: #ff3399 1px solid;
+    }
 
-		p {
-			margin: 1em 0 0;
-		}
+    p {
+      margin: 1em 0 0;
+    }
 
-	}
+  }
 
-	.emphasis {
-		font-weight: bold;
-		font-size: 1.2em;
-	}
+  .emphasis {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
 
-	.smaller {
-		font-size: 0.8em;
-	}
+  .smaller {
+    font-size: 0.8em;
+  }
 
-	.moriel-corner {
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		height: 700px;
-		width: 700px;
-		background-image: url(/src/assets/moriel-corner.png);
+  .moriel-corner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 700px;
+    width: 700px;
+    background-image: url(/src/assets/moriel-corner.png);
     background-size: contain;
     background-repeat: no-repeat;
-		z-index: -1;
+    z-index: -1;
 
-		@media screen and (max-width: 950px) {
-			width: 600px;
-			height: 600px;
-		}
+    @media screen and (max-width: 950px) {
+      width: 600px;
+      height: 600px;
+    }
 
-		// Midway point where the content is too narrow
+    // Midway point where the content is too narrow
     @media screen and (max-width: 750px) {
-			opacity: 0.4;
-		}
+      opacity: 0.4;
+    }
 
-		@media screen and (max-width: 400px) {
-			width: 350px;
-			height: 350px;
-		}
-	}
+    @media screen and (max-width: 400px) {
+      width: 350px;
+      height: 350px;
+    }
+  }
 
-	/* Global */
-	.rainbow {
-		font-weight: bold;
-		animation: colorRotate 1s linear 0s infinite;
-	}
+  /* Global */
+  .rainbow {
+    font-weight: bold;
+    animation: colorRotate 1s linear 0s infinite;
+  }
 
-	@keyframes colorRotate {
-		from {
-			color: #ffebeb;
-		}
-		10% {
-			color: #efbbff;
-		}
-		50% {
-			color: #ffc2db;
-		}
-		75% {
-			color: #fdd0fd;
-		}
-		100% {
-			color: #faf2ff;
-		}
-	}
+  @keyframes colorRotate {
+    from {
+      color: #ffebeb;
+    }
+    10% {
+      color: #efbbff;
+    }
+    50% {
+      color: #ffc2db;
+    }
+    75% {
+      color: #fdd0fd;
+    }
+    100% {
+      color: #faf2ff;
+    }
+  }
 </style>
