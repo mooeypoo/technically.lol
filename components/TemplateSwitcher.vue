@@ -4,11 +4,12 @@
         color="primary"
         mandatory
         group
-        density="comfortable"
+        density="compact"
         size="small"
+        variant="outlined"
     >
-            <v-btn density="comfortable" value="corporate">Corporate</v-btn>
-            <v-btn density="comfortable" value="afterhours">Afterhours</v-btn>
+            <v-btn size="small" value="corporate">Corporate</v-btn>
+            <v-btn size="small" value="afterhours">Afterhours</v-btn>
     </v-btn-toggle>
 
 </template>
