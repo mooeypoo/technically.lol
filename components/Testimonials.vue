@@ -10,17 +10,17 @@
             class="pa-4"
         >
             <div class="d-flex fill-height justify-center align-center">
-                <v-card max-width="500">
-                    <v-card-item>
-                        <p class="text-sm-h5 text-subtitle-1 text-medium-emphasis mt-2">
+                <v-card max-width="500" color="white" variant="tonal">
+                    <v-card-item class="text-white">
+                        <p class="text-sm-h5 text-subtitle-1 mt-2">
                             {{ testimonial.text}}
                         </p>
                     </v-card-item>
                     <v-card-item>
-                        <v-list-item
-                            class="px-0 mt-3"
-                            :title="testimonial.from"
-                        >
+                        <v-list-item class="px-0 mt-3">
+                            <v-list-item-title class="text-white">
+                                {{ testimonial.from }}
+                            </v-list-item-title>
                             <template #prepend>
                             <v-avatar :image="images[`logo-${testimonial.image}`]" />
                             </template>
