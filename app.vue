@@ -2,11 +2,11 @@
   <NuxtLayout>
     <v-app>
       <TopBar />
-      <v-app-bar v-if="display.xs">
+      <!-- <v-app-bar v-if="display.xs">
         <TemplateSwitcher class="mobile-template-switcher" />
-      </v-app-bar>
+      </v-app-bar> -->
       <v-main>
-        <v-container>
+        <v-container class="text-center">
           <v-card dark image="~/assets/img/onstage.jpg" class="hero-section">
             <template #image>
               <v-img gradient="to bottom, rgba(39, 39, 39, .5), rgba(39, 39, 39, .9)" />
@@ -21,7 +21,13 @@
           </v-card>
 
           <v-container>
-            <h1 v-if="siteTheme === 'corporate'" class="mb-2">Comedy for Everyone</h1>
+            <v-divider class="my-4" />
+
+            <h1>Comedy for any events</h1>
+            <ProminentTemplateSwitcher />
+
+            <v-divider class="my-4" />
+            <h1 v-if="siteTheme === 'corporate'" class="mb-2">Comedy for all audiences</h1>
             <h1 v-else class="mb-2">Laugh your techbro off</h1>
             <IntroSwitcher />
           </v-container>
@@ -38,7 +44,8 @@ import { useThemeAbstraction } from '../use/useThemeAbstraction'
 import TopBar from '~/components/TopBar.vue'
 import Testimonials from '~/components/Testimonials.vue'
 import IntroSwitcher from '~/components/IntroSwitcher.vue'
-import TemplateSwitcher from './components/TemplateSwitcher.vue'
+// import TemplateSwitcher from './components/TemplateSwitcher.vue'
+import ProminentTemplateSwitcher from './components/ProminentTemplateSwitcher.vue'
 
 const display = ref(useDisplay())
 const { siteTheme } = useThemeAbstraction()

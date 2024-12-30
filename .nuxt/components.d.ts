@@ -3,6 +3,7 @@ import type { DefineComponent, SlotsType } from 'vue'
 type IslandComponent<T extends DefineComponent> = T & DefineComponent<{}, {refresh: () => Promise<void>}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, SlotsType<{ fallback: { error: unknown } }>>
 interface _GlobalComponents {
       'IntroSwitcher': typeof import("../components/IntroSwitcher.vue")['default']
+    'ProminentTemplateSwitcher': typeof import("../components/ProminentTemplateSwitcher.vue")['default']
     'TemplateSwitcher': typeof import("../components/TemplateSwitcher.vue")['default']
     'Testimonials': typeof import("../components/Testimonials.vue")['default']
     'TopBar': typeof import("../components/TopBar.vue")['default']
@@ -30,6 +31,7 @@ interface _GlobalComponents {
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
       'LazyIntroSwitcher': typeof import("../components/IntroSwitcher.vue")['default']
+    'LazyProminentTemplateSwitcher': typeof import("../components/ProminentTemplateSwitcher.vue")['default']
     'LazyTemplateSwitcher': typeof import("../components/TemplateSwitcher.vue")['default']
     'LazyTestimonials': typeof import("../components/Testimonials.vue")['default']
     'LazyTopBar': typeof import("../components/TopBar.vue")['default']
@@ -63,6 +65,7 @@ declare module 'vue' {
 }
 
 export const IntroSwitcher: typeof import("../components/IntroSwitcher.vue")['default']
+export const ProminentTemplateSwitcher: typeof import("../components/ProminentTemplateSwitcher.vue")['default']
 export const TemplateSwitcher: typeof import("../components/TemplateSwitcher.vue")['default']
 export const Testimonials: typeof import("../components/Testimonials.vue")['default']
 export const TopBar: typeof import("../components/TopBar.vue")['default']
@@ -90,6 +93,7 @@ export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
 export const LazyIntroSwitcher: typeof import("../components/IntroSwitcher.vue")['default']
+export const LazyProminentTemplateSwitcher: typeof import("../components/ProminentTemplateSwitcher.vue")['default']
 export const LazyTemplateSwitcher: typeof import("../components/TemplateSwitcher.vue")['default']
 export const LazyTestimonials: typeof import("../components/Testimonials.vue")['default']
 export const LazyTopBar: typeof import("../components/TopBar.vue")['default']

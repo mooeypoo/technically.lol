@@ -10,11 +10,11 @@
         </v-app-bar-title>
         <v-app-bar-title v-else>Moriel Schottlender 🎤 {{ themeTitle }}</v-app-bar-title>
 
-        <template v-slot:append>
+        <!-- <template v-slot:append>
             <TemplateSwitcher
                 v-if="!display.xs"
             />
-        </template>
+        </template> -->
     </v-app-bar>
 </template>
 
@@ -22,7 +22,7 @@
 import { ref, onMounted } from 'vue'
 import { useDisplay } from 'vuetify'
 import { filename } from 'pathe/utils';
-import TemplateSwitcher from '~/components/TemplateSwitcher.vue'
+// import TemplateSwitcher from '~/components/TemplateSwitcher.vue'
 import { useThemeAbstraction } from '../use/useThemeAbstraction'
 
 const { siteTitle, siteAvatar } = useThemeAbstraction()
