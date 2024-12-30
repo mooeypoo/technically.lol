@@ -21,7 +21,8 @@
           </v-card>
 
           <v-container>
-            <h1 class="mb-2">Comedy for Everyone</h1>
+            <h1 v-if="siteTheme === 'corporate'" class="mb-2">Comedy for Everyone</h1>
+            <h1 v-else class="mb-2">Laugh your techbro off</h1>
             <IntroSwitcher />
           </v-container>
         </v-container>

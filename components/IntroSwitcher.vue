@@ -18,35 +18,46 @@
         <v-tabs-window v-model="tab">
             <v-tabs-window-item value="general">
                 <div v-if="siteTheme === 'corporate'">
-                    <p>Hi, I'm Moriel — a software engineer and comedian who brings a fresh, funny take on the tech world that anyone can enjoy. Whether you're curious about what goes on behind the screens or just looking for a good laugh, I'll make the complex world of technology entertaining and easy to understand. No coding required, just good humor about the quirks and chaos of the industry.</p>
+                    <p>Hi, I’m Moriel—a software engineer and comedian who turns the madness of the tech world into sharp, relatable humor for anyone.</p>
+                    <p>Whether you’re trying to decode AI, laughing at startup culture, or wondering what all those apps are actually doing, I’ll break it down in a way that’s funny and easy to follow. No need for a computer science degree, just a sense of humor.</p>
                 </div>
                 <div v-else>
-                    <p>Hey there! I'm Moriel—software engineer by day, comedian by night.</p>
-                    <p>I'm here to give you a hilarious peek behind the curtain of the tech world, where we use buzzwords like “synergy” and “disruption” to sound smart. Whether you know tech or just know people in tech, you'll love laughing about the absurdity of startups, Silicon Valley, and my personal war with autocorrect.</p>
+                    <p>What’s up? I’m Moriel—a software engineer who does stand-up comedy to blow off steam and spill the tea about the tech world.</p>
+                    <p>I’m here to make you laugh at startups, Silicon Valley, and the ridiculous ways we’re all being “optimized” by apps. If you’ve ever rolled your eyes at tech bros or felt personally attacked by autocorrect, you’re in the right place.</p>
                 </div>
             </v-tabs-window-item>
             <v-tabs-window-item value="tech">
                 <div v-if="siteTheme === 'corporate'">
-                    Hi, I'm Moriel—a software engineer and stand-up comedian with an insider's view of the tech world. I combine my technical background with a sharp sense of humor to deliver laughs about everything from sprint planning to stakeholder chaos. Whether you're debugging code or managing people, my comedy is here to celebrate, commiserate, and entertain everyone in the tech ecosystem.
+                    <p>Hey, tech crew! I’m Moriel—a software engineer and comedian who knows exactly what keeps you up at night (hint: it’s not just your on-call rotation).</p>
+                    <p>From the absurdity of “Agile best practices” to the unspoken truth that we’re all just one bad merge conflict away from chaos, I bring humor that speaks to every corner of the industry.</p>
+                    <p>Whether you’re debugging microservices, surviving endless standups, or silently judging someone’s code quality, I’m here to make sure you laugh about it all instead of rage-quitting.</p>
                 </div>
                 <div v-else>
-                    What's up, tech fam? I'm Moriel—a software engineer who doubles as a stand-up comedian when the laptops go to sleep. From the agony of merging conflicts to the never-ending “quick syncs,” I turn our shared struggles into laughs. Whether you're pushing to production or just pushing deadlines, I'm here to roast the industry we love (and love to hate).
+                    <p>Hey, tech fam! I’m Moriel—a software engineer who doubles as a comedian when the Jenkins builds are running.</p>
+                    <p>From the agony of pull requests getting nitpicked to the chaos of “just a quick hotfix,” I know the struggle. Whether you’re buried in JIRA tickets or trying to explain to your boss why the staging environment is on fire, I’ve got laughs for every part of the process.</p>
                 </div>
             </v-tabs-window-item>
             <v-tabs-window-item value="leadership">
                 <div v-if="siteTheme === 'corporate'">
-                    Hello, leaders! I'm Moriel—a software engineer and comedian who specializes in humor tailored for tech leadership. Whether you're rebranding “burnout” as “passion,” surviving reorgs, or inspiring your team, my comedy shines a light on the quirks of leadership in the tech world. It's relatable, professional, and guaranteed to make you laugh about your latest pivot—or at least your last quarterly all-hands.
+                    <p>Hello, movers and shakers! I’m Moriel—a software engineer and comedian who’s here to say what your team won’t (but definitely wants to).</p>
+                    <p>From navigating “seamless integrations” to translating buzzwords like “synergy” and “scaling” into real strategies, I bring a sharp lens to the joys and headaches of being in charge.</p>
+                    <p>Let’s laugh about product pivots, unmanageable roadmaps, and that one person who always dominates the all-hands Q&A.</p>
                 </div>
                 <div v-else>
-                    Hi there, tech leaders! I'm Moriel—a software engineer and comedian with a knack for turning your unique challenges into comedy gold. Whether it's navigating reorgs, pretending to “align on strategy,” or herding cats (ahem, engineers), I'll bring relatable humor to the executive world. Let's face it—sometimes you just need a laugh to get through that quarterly planning session.
+                    <p>Hey, leaders! I’m Moriel—a software engineer and comedian with a knack for turning your challenges into comedy gold.</p>
+                    <p>Let’s laugh about your “data-driven decisions,” “OKRs” that don’t even make sense, and the endless parade of reorgs. You’re working hard scaling teams, managing burnout, and trying to survive QBRs, so let me give you a reason to enjoy the chaos for once.</p>
                 </div>
             </v-tabs-window-item>
             <v-tabs-window-item value="techbros">
                 <div v-if="siteTheme === 'corporate'">
-                    Hey there! I'm Moriel—a software engineer and comedian here to deliver a polished, tongue-in-cheek look at the tech world, even for you 10x engineers. From optimizing workflows to debating over dark mode supremacy, I've got you covered. Let's laugh about the grind, the hustle, and the ridiculous acronyms we all pretend to understand.
+                    <p>Yo, legends. I’m Moriel—software engineer, comedian, and your unofficial CTO of comedy.</p>
+                    <p>I know you’re out there optimizing your CI/CD pipelines and debating Kubernetes versus Docker while sipping your cold brew. Let me optimize your laughs instead.</p>
+                    <p>From flexing your GitHub stars to “disrupting” your lunch break with another hackathon, I’m here to roast the grind and your 10x engineer energy. Let’s deploy these jokes straight to production. 🚀</p>
                 </div>
                 <div v-else>
-                    Yo, what's up, code kings? I'm Moriel—a software engineer who moonlights as a comedian, here to roast and toast your tech bro glory. Think of me as the stand-up comic version of your favorite Hacker News thread: spicy, over the top, and absolutely ridiculous. Grab your Soylent, flex those GitHub stats, and let's vibe. 🚀
+                    <p>Yo, rockstars. I’m Moriel—a software engineer and comedian ready to roast your entire vibe.</p>
+                    <p>Whether you’re bragging about your multi-cloud strategy, optimizing your React components, or hyping up your latest ChatGPT prompt engineering skills, I’m here to keep it real.</p>
+                    <p>You’re not “disrupting” anything, but you’ll disrupt your own laughter when you hear these jokes. Fire up the Kubernetes cluster, grab your Soylent, and let’s vibe. 🚀</p>
                 </div>
             </v-tabs-window-item>
         </v-tabs-window>
