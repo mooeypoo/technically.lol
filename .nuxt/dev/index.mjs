@@ -180,7 +180,7 @@ const _3UQhYnUjcR = (function(nitro) {
 
 const rootDir = "/home/moriel/code/projects/technically.lol";
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[],"title":"Moriel Schottlender : Technically Funny"};
 
 const appRootTag = "div";
 

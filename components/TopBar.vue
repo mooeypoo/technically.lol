@@ -1,8 +1,8 @@
 <template>
     <v-app-bar :elevation="display.xs ? '0' : '2'">
-        <template v-slot:prepend>
+        <!-- <template v-slot:prepend>
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
-        </template>
+        </template> -->
         <v-avatar size="64" :image="images[siteAvatar]"></v-avatar>
         <v-app-bar-title v-if="display.xs">
             <p>Moriel Schottlender</p>

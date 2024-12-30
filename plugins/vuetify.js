@@ -15,9 +15,10 @@ const corporateTheme = {
     // 'surface-light': '#0d1b2a'
     background: '#cfbda6', // Light yellow-gray background
     surface: '#e9e0d9',    // Light yellow-gray surface
-    primary: '#252422',    // Navy blue primary color
+    primary: '#EB5E28',//'#252422',    // Navy blue primary color
     secondary: '#827866',  // Bright teal secondary color
-    accent: '#ABA08E',     // Bright teal accent color
+    accent: '#ABA08E',     
+    'on-accent': '#000000',
     error: '#FF5252',      // Standard error color
     info: '#2196F3',       // Standard info color
     success: '#4CAF50',    // Standard success color
@@ -35,7 +36,7 @@ const afterhoursTheme = {
     // surface: '#e9e0d9',    // Light yellow-gray surface
     primary: '#F72585',    
     secondary: '#ffffff',  
-    accent: '#ABA08E',     // Bright teal accent color
+    accent:'#016154',     // Teal accent color
     error: '#FF5252',      // Standard error color
     info: '#2196F3',       // Standard info color
     success: '#4CAF50',    // Standard success color

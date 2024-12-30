@@ -40,10 +40,7 @@ import IntroSwitcher from '~/components/IntroSwitcher.vue'
 import TemplateSwitcher from './components/TemplateSwitcher.vue'
 
 const display = ref(useDisplay())
-
 const { siteTheme } = useThemeAbstraction()
-
-// const theTheme = ref(siteTheme)
 const vuetifyTheme = useTheme()
 
 // Watch the pinia store's definition of the theme and update the global theme accordingly
