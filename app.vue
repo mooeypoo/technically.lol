@@ -18,7 +18,6 @@
           </v-card>
 
           <v-container>
-            <v-divider class="my-4" />
 
             <h2 class="mb-2">Comedy for any events</h2>
             <ProminentTemplateSwitcher />

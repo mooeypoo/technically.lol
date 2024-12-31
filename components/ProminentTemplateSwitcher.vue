@@ -1,66 +1,76 @@
 <template>
-<!-- <v-row
-      align="center"
+    <v-row
+      align="top"
       class="fill-height"
       justify="center"
     >
-      <template v-for="(item, i) in items" :key="i">
         <v-col
           cols="12"
-          md="4"
+          md="6"
         >
-          <v-hover v-slot="{ isHovering, props }">
-            <v-card
-              dark
-              :class="{ 'on-hover': isHovering }"
-              :elevation="isHovering ? 12 : 2"
-              :image="item.img"
-              v-bind="props"
-              height="225px"
-            >
-            <template #image>
-              <v-img gradient="to bottom, rgba(39, 39, 39, .7), rgba(39, 39, 39, 1)" />
-            </template>
-                <v-card-title class="text-h6 text-white d-flex flex-column">
-                  <p class="mt-4">
-                    {{ item.title }}
-                  </p>
-
-                  <div>
-                    <p class="ma-0 text-body-2 font-weight-bold">
-                      {{ item.text }}
-                    </p>
-                    <p class="text-caption font-weight-medium">
-                      {{ item.subtext }}
-                    </p>
-                  </div>
-                </v-card-title>
-            </v-card>
-          </v-hover>
+            <v-hover v-slot="{ isHovering, props }">
+                <v-card
+                    :class="{
+                        'on-hover': isHovering,
+                        'text-black': siteTheme === 'corporate',
+                        'text-white': siteTheme === 'afterhours'
+                    }"
+                    v-bind="props"
+                    color="accent"
+                    :variant="isHovering ? 'tonal' : 'text'"
+                    @click="siteTheme = 'corporate'"
+                >
+                    <v-card-item class="pb-0">
+                        <h3 class="text-center">
+                            <v-icon color="primary" v-if="siteTheme === 'corporate'">mdi-microphone-variant</v-icon>
+                            Corporate Events
+                            <v-icon color="primary" v-if="siteTheme === 'corporate'">mdi-microphone-variant</v-icon>
+                        </h3>
+                        <!-- <v-divider class="my-2" /> -->
+                        <v-btn @click="siteTheme = 'corporate'" variant="tonal" size="x-small">Switch Style</v-btn>
+                    </v-card-item>
+                    <v-card-item class="text-left pt-2">
+                            <p>Looking for a fresh way to energize your next corporate event? Moriel brings the perfect blend of sharp wit and relatable humor tailored to professional audiences.</p>
+                            <p>As a software engineer and comedian, Moriel delivers clean, workplace-friendly comedy that resonates with tech teams, leadership, and employees alike.</p>
+                            <p>Bring laughter to your event while keeping it professional — because a team that laughs together debugs better together!</p>
+                    </v-card-item>
+                </v-card>
+            </v-hover>
         </v-col>
-      </template>
-    </v-row> -->
-    <v-btn-toggle
-        v-model="siteTheme"
-        mandatory
-        group
-        size="x-large"
-        variant="tonal"
-        rounded="lg"
-        stacked
-        style="height: auto"
-        class="mx-auto"
-    >
-        <v-btn stacked value="corporate" class="pa-4">
-            <v-icon>mdi-lectern</v-icon>
-            Corporate<br />Comedy
-        </v-btn>
-        <v-btn stacked value="afterhours" class="pa-4">
-            <v-icon>mdi-microphone-variant</v-icon>
-            Afterhours<br/>Comedy
-        </v-btn>
-    </v-btn-toggle>
-
+        <v-col
+          cols="12"
+          md="6"
+        >
+            <v-hover v-slot="{ isHovering, props }">
+                <v-card
+                    :class="{
+                        'on-hover': isHovering,
+                        'text-black': siteTheme === 'corporate',
+                        'text-white': siteTheme === 'afterhours'
+                    }"
+                    v-bind="props"
+                    color="accent"
+                    :variant="isHovering ? 'tonal' : 'text'"
+                    @click="siteTheme = 'afterhours'"
+                >
+                    <v-card-item class="pb-0">
+                        <h3 class="text-center">
+                            <v-icon color="primary" v-if="siteTheme === 'afterhours'">mdi-star-shooting-outline</v-icon>
+                                After-Hours Events
+                            <v-icon color="primary" v-if="siteTheme === 'afterhours'">mdi-star-shooting-outline</v-icon>
+                        </h3>
+                        <!-- <v-divider class="my-2" /> -->
+                        <v-btn @click="siteTheme = 'corporate'" variant="tonal" size="x-small">Switch Style</v-btn>
+                    </v-card-item>
+                    <v-card-item class="text-left pt-2">
+                        <p>Turn up the energy at your afterhours event, meet Moriel — <em>"The Lesbian Techbro"</em> — a software engineer and comedian who brings an unapologetically bold, hilarious perspective to the stage.</p>
+                        <p>With a knack for roasting the tech world and a sharp eye for the absurd, Moriel dives into edgier, no-holds-barred humor that's perfect for a crowd ready to let loose.</p>
+                        <p>From startup chaos to tech bro culture (with a sapphic twist), no sacred cow is safe, and no punchline is too spicy. If your team is ready to laugh hard and maybe blush a little, this is the comedy you've been waiting for. 🚀</p>
+                    </v-card-item>
+                </v-card>
+            </v-hover>
+        </v-col>
+    </v-row>
 </template>
 
 <script setup>
