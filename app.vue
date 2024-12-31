@@ -2,9 +2,6 @@
   <NuxtLayout>
     <v-app>
       <TopBar />
-      <!-- <v-app-bar v-if="display.xs">
-        <TemplateSwitcher class="mobile-template-switcher" />
-      </v-app-bar> -->
       <v-main>
         <v-container class="text-center">
           <v-card dark image="~/assets/img/onstage.jpg" class="hero-section">
@@ -23,13 +20,13 @@
           <v-container>
             <v-divider class="my-4" />
 
-            <h1>Comedy for any events</h1>
+            <h2 class="mb-2">Comedy for any events</h2>
             <ProminentTemplateSwitcher />
 
             <v-divider class="my-4" />
-            <h1 v-if="siteTheme === 'corporate'" class="mb-2">Comedy for all audiences</h1>
-            <h1 v-else class="mb-2">Laugh your techbro off</h1>
-            <IntroSwitcher />
+            <h2 v-if="siteTheme === 'corporate'" class="mb-2">Comedy for all audiences</h2>
+            <h2 v-else class="mb-2">Laugh your techbro off</h2>
+            <IntroSwitcher class="text-left" />
           </v-container>
         </v-container>
       </v-main>
