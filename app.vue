@@ -48,10 +48,20 @@
             </v-card>
           </v-container>
 
-          <!-- <v-container>
+          <v-container class="text-center">
+            <h2 v-if="siteTheme === 'corporate'" class="mb-2">Contact & Inquiries</h2>
+            <h2 v-else class="mb-2">Shoot me an email</h2>
+            <v-divider class="mb-4" />
             <ContactForm />
-          </v-container> -->
+          </v-container>
       </v-main>
+      <v-footer class="mt-10 text-center">
+            <v-row>
+              <v-col>
+                <p>&copy; 2024 Moriel Schottlender</p>
+              </v-col>
+            </v-row>
+          </v-footer>
     </v-app>
   </NuxtLayout>
 </template>
