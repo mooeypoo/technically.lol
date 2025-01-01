@@ -21,8 +21,10 @@
             <ProminentTemplateSwitcher />
           </v-container>
 
-          <v-container>
-              <Testimonials />
+          <v-container max-width="900px" class="text-center">
+            <h2 class="mb-2">AI testimonials</h2>
+            <v-divider class="mb-4" />
+            <Testimonials />
           </v-container>
 
           <v-container max-width="900px" class="text-center">

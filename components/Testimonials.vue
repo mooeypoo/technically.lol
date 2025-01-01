@@ -1,31 +1,31 @@
 <template>
-    <v-carousel
-        height="175"
-        :show-arrows="false"
-        cycle
-        hide-delimiters
-    >
-        <v-carousel-item
-            v-for="testimonial in testimonials" :key="testimonial.from"
-            class="pa-4"
-        >
-            <v-card max-width="500" class="mx-auto" variant="tonal">
-                <v-card-item>
-                    <p class="text-sm-h5 text-subtitle-1">
-                        {{ testimonial.text}}
-                    </p>
-                    <v-list-item class="px-0 mt-3">
-                        <v-list-item-title>
-                            {{ testimonial.from }}
-                        </v-list-item-title>
-                        <template #prepend>
-                        <v-avatar :image="images[`logo-${testimonial.image}`]" />
-                        </template>
-                    </v-list-item>
-                </v-card-item>
-            </v-card>
-        </v-carousel-item>
-    </v-carousel>
+    <v-container fluid>
+        <v-item-group v-model="model" class="mb-4">
+            <v-row justify="center">
+            <v-col v-for="(testimonial, i) in testimonials" :key="i" cols="auto" class="pa-2">
+                <v-item v-slot="{ toggle, isSelected }" :value="testimonial">
+                    <v-btn
+                    :border="isSelected ? 'thin primary opacity-50' : undefined"
+                    icon
+                    :ripple="false"
+                    variant="flat"
+                    :color="isSelected ? 'primary' : 'surface'"
+                    @click="toggle"
+                    >
+                    <v-avatar :image="images['logo-' + testimonial.image]" />
+                    </v-btn>
+                </v-item>
+            </v-col>
+        </v-row>
+        </v-item-group>
+        <div class="text-center">
+        <strong class="text-subtitle-1">{{ model.name }}</strong>
+
+        <p class="text-disabled mb-4">{{ model.title }}</p>
+
+        <p class="text-h6 text-medium-emphasis w-100 w-sm-50 w-lg-33 mx-auto">{{ model.text }}</p>
+        </div>
+    </v-container>
 </template>
 
 <script setup>
@@ -53,42 +53,51 @@ const shuffleArray = (array) => {
   }
 }
 
+console.log(images)
 const testimonials = [
     {
         image: 'apple',
-        from: 'Siri',
+        name: 'Siri',
+        title: 'The OG AI Assistant',
         text: 'I asked her to tell me a joke, and now I\'m questioning my existence. 5 stars.',
     },
-    {
-        image: 'alexa',
-        from: 'Alexa',
-        text: "Her jokes have a 99.9% confidence score for humor."
-    },
+    // {
+    //     image: 'alexa',
+    //     name: 'Alexa',
+    //     title: 'Amazonian AI',
+    //     text: "Her jokes have a 99.9% confidence score for humor."
+    // },
     {
         image: 'chatgpt',
-        from: 'ChatGPT',
+        name: 'ChatGPT',
+        title: 'OpenAI\'s Head Chatbot',
         text: 'Her comedy special crashed my language model. Would recommend.'
     },
-    {
-        image: 'dalle',
-        from: 'Dall-E',
-        text: '10/10 would hallucinate laughter again!'
-    },
+    // {
+    //     image: 'dalle',
+    //     name: 'Dall-E',
+    //     title: 'OpenAI\'s Art AI',
+    //     text: '10/10 would hallucinate laughter again!'
+    // },
     {
         image: 'gemini',
-        from: 'Gemini',
+        name: 'Gemini',
+        title: 'Google\'s AI assistant',
         text: 'Funnier than asking me to tell a joke.'
     },
     {
         image: 'githubcopilot',
-        from: 'Github Copilot',
+        name: 'Github Copilot',
+        title: 'AI Pair Programmer',
         text: 'Scalable laughs with zero latency — Moriel delivers!'
     },
     {
         image: 'midjourney',
-        from: 'Midjourney',
+        name: 'Midjourney',
+        title: 'The OG 6-fingered AI',
         text: 'Moriel’s comedy is so clever, I had to run a full query to keep up.'
     }
 ]
 shuffleArray(testimonials)
+const model = ref(testimonials[2])
 </script>
