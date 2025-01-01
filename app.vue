@@ -16,18 +16,41 @@
               <Testimonials />
             </v-card-item>
           </v-card>
+          </v-container>
 
-          <v-container>
-
+          <v-container class="text-center">
             <h2 class="mb-2">Comedy for any events</h2>
+            <v-divider class="mb-4" />
             <ProminentTemplateSwitcher />
+          </v-container>
 
-            <v-divider class="my-4" />
+          <v-container class="text-center">
             <h2 v-if="siteTheme === 'corporate'" class="mb-2">Comedy for all audiences</h2>
             <h2 v-else class="mb-2">Laugh your techbro off</h2>
+            <v-divider class="mb-4" />
             <IntroSwitcher class="text-left" />
           </v-container>
-        </v-container>
+
+          <v-container class="text-center">
+            <h2 v-if="siteTheme === 'corporate'" class="mb-2">Engineering expertise</h2>
+            <h2 v-else class="mb-2">10x engineer</h2>
+            <v-divider class="mb-4" />
+            <v-card color="accent">
+              <v-card-item class="text-left">
+                <p class="mb-2">Moriel is a physicist turned software engineer turned systems architect, currently working on modernizing Wikipedia’s systems. She’s an Open Source enthusiast, right-to-left language support and localization evangelist, and a general domain hoarder.</p>
+                <p>Moriel has presented in technical conferences across the world about 
+                  <a href="https://ltr.wtf/talks/2016-11-02-linux-conf-au.html" target="_blank">localization</a> 
+                  and <a href="https://ltr.wtf/talks/2018-08-23-bidi-wat.html" target="_blank">i18n</a>, 
+                  <a href="https://blog.archive.org/2019/10/29/weaving-books-into-the-web-starting-with-wikipedia/" target="_blank">Wikipedia</a> 
+                  and <a href="https://www.youtube.com/watch?v=IvTmHMAd7nY&ab_channel=Domain-DrivenDesignEurope" target="_blank">systems architecture</a>.
+                  You can read more about Moriel's technical work on <a href="https://moriel.tech" target="_blank">moriel.tech</a></p>
+              </v-card-item>
+            </v-card>
+          </v-container>
+
+          <!-- <v-container>
+            <ContactForm />
+          </v-container> -->
       </v-main>
     </v-app>
   </NuxtLayout>
