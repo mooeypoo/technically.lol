@@ -3,7 +3,7 @@
     <v-app>
       <TopBar />
       <v-main>
-        <v-container class="text-center">
+        <v-container max-width="900px" class="text-center">
           <v-card height="220" dark image="~/assets/img/onstage.jpg" class="hero-section d-flex align-center justify-center flex-wrap text-center mx-auto px-4">
             <template #image>
               <v-img gradient="to bottom, rgba(39, 39, 39, .5), rgba(39, 39, 39, .9)" />
@@ -15,7 +15,7 @@
           </v-card>
           </v-container>
 
-          <v-container class="text-center">
+          <v-container max-width="900px" class="text-center">
             <h2 class="mb-2">Comedy for any events</h2>
             <v-divider class="mb-4" />
             <ProminentTemplateSwitcher />
@@ -25,14 +25,14 @@
               <Testimonials />
           </v-container>
 
-          <v-container class="text-center">
+          <v-container max-width="900px" class="text-center">
             <h2 v-if="siteTheme === 'corporate'" class="mb-2">Comedy for all audiences</h2>
             <h2 v-else class="mb-2">Laugh your techbro off</h2>
             <v-divider class="mb-4" />
             <IntroSwitcher class="text-left" />
           </v-container>
 
-          <v-container class="text-center">
+          <v-container max-width="900px" class="text-center">
             <h2 v-if="siteTheme === 'corporate'" class="mb-2">Engineering expertise</h2>
             <h2 v-else class="mb-2">10x engineer</h2>
             <v-divider class="mb-4" />
@@ -49,7 +49,7 @@
             </v-card>
           </v-container>
 
-          <v-container class="text-center">
+          <v-container max-width="900px" class="text-center">
             <h2 v-if="siteTheme === 'corporate'" class="mb-2">Contact & Inquiries</h2>
             <h2 v-else class="mb-2">Shoot me an email</h2>
             <v-divider class="mb-4" />
