@@ -1,36 +1,31 @@
 <template>
     <v-carousel
-        height="250"
-        show-arrows="hover"
+        height="175"
+        :show-arrows="false"
         cycle
-        hide-delimiter-background
+        hide-delimiters
     >
         <v-carousel-item
             v-for="testimonial in testimonials" :key="testimonial.from"
             class="pa-4"
         >
-            <div class="d-flex fill-height justify-center align-center">
-                <v-card max-width="500" color="white" variant="tonal">
-                    <v-card-item class="text-white">
-                        <p class="text-sm-h5 text-subtitle-1 mt-2">
-                            {{ testimonial.text}}
-                        </p>
-                    </v-card-item>
-                    <v-card-item>
-                        <v-list-item class="px-0 mt-3">
-                            <v-list-item-title class="text-white">
-                                {{ testimonial.from }}
-                            </v-list-item-title>
-                            <template #prepend>
-                            <v-avatar :image="images[`logo-${testimonial.image}`]" />
-                            </template>
-                        </v-list-item>
-                    </v-card-item>
-                </v-card>
-            </div>
+            <v-card max-width="500" class="mx-auto" variant="tonal">
+                <v-card-item>
+                    <p class="text-sm-h5 text-subtitle-1">
+                        {{ testimonial.text}}
+                    </p>
+                    <v-list-item class="px-0 mt-3">
+                        <v-list-item-title>
+                            {{ testimonial.from }}
+                        </v-list-item-title>
+                        <template #prepend>
+                        <v-avatar :image="images[`logo-${testimonial.image}`]" />
+                        </template>
+                    </v-list-item>
+                </v-card-item>
+            </v-card>
         </v-carousel-item>
     </v-carousel>
-
 </template>
 
 <script setup>

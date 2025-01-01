@@ -4,7 +4,7 @@
       <TopBar />
       <v-main>
         <v-container class="text-center">
-          <v-card dark image="~/assets/img/onstage.jpg" class="hero-section">
+          <v-card height="220" dark image="~/assets/img/onstage.jpg" class="hero-section d-flex align-center justify-center flex-wrap text-center mx-auto px-4">
             <template #image>
               <v-img gradient="to bottom, rgba(39, 39, 39, .5), rgba(39, 39, 39, .9)" />
             </template>
@@ -12,9 +12,6 @@
               <h2 class="text-white">Moriel Schottlender</h2>
               <p>Where code meets comedy</p>
             </v-card-title>
-            <v-card-item>
-              <Testimonials />
-            </v-card-item>
           </v-card>
           </v-container>
 
@@ -22,6 +19,10 @@
             <h2 class="mb-2">Comedy for any events</h2>
             <v-divider class="mb-4" />
             <ProminentTemplateSwitcher />
+          </v-container>
+
+          <v-container>
+              <Testimonials />
           </v-container>
 
           <v-container class="text-center">
