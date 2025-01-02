@@ -3,14 +3,14 @@
         <v-item-group v-model="model" class="mb-4">
             <v-row justify="center">
             <v-col v-for="(testimonial, i) in testimonials" :key="i" cols="auto" class="pa-2">
-                <v-item v-slot="{ toggle, isSelected }" :value="testimonial">
+                <v-item v-slot="{ isSelected }" :value="testimonial">
                     <v-btn
                     :border="isSelected ? 'thin primary opacity-50' : undefined"
                     icon
                     :ripple="false"
                     variant="flat"
                     :color="isSelected ? 'primary' : 'surface'"
-                    @click="toggle"
+                    @click="model = i"
                     >
                     <v-avatar :image="images['logo-' + testimonial.image]" />
                     </v-btn>
@@ -18,13 +18,37 @@
             </v-col>
         </v-row>
         </v-item-group>
-        <div class="text-center">
-        <strong class="text-subtitle-1">{{ model.name }}</strong>
-
-        <p class="text-disabled mb-4">{{ model.title }}</p>
-
-        <p class="text-h6 text-medium-emphasis w-100 w-sm-50 w-lg-33 mx-auto">{{ model.text }}</p>
-        </div>
+        <v-carousel
+            v-model="model"
+            max-width="350"
+            style="height: auto;"
+            hide-delimiters
+            cycle
+        >
+            <v-carousel-item
+                v-for="(testimonial, i) in testimonials"
+                :key="i"
+                :value="i"
+            >
+                <v-card max-width="350" class="mx-auto">
+                    <v-card-item>
+                        {{ testimonial.text }}
+                    </v-card-item>
+                    <v-card-item>
+                        <v-list-item
+                        class="px-0 mt-3"
+                        :prepend-avatar="images['logo-' + testimonial.image]"
+                        :subtitle="testimonial.title"
+                        :title="testimonial.name"
+                    >
+                        <template #prepend>
+                            <v-avatar color="surface-light" />
+                        </template>
+                    </v-list-item>
+                    </v-card-item>
+                </v-card>
+            </v-carousel-item>
+        </v-carousel>
     </v-container>
 </template>
 
@@ -56,6 +80,12 @@ const shuffleArray = (array) => {
 console.log(images)
 const testimonials = [
     {
+        image: 'chatgpt',
+        name: 'ChatGPT',
+        title: 'OpenAI\'s Head Chatbot',
+        text: 'Her comedy special crashed my language model. Would recommend.'
+    },
+    {
         image: 'apple',
         name: 'Siri',
         title: 'The OG AI Assistant',
@@ -67,12 +97,6 @@ const testimonials = [
     //     title: 'Amazonian AI',
     //     text: "Her jokes have a 99.9% confidence score for humor."
     // },
-    {
-        image: 'chatgpt',
-        name: 'ChatGPT',
-        title: 'OpenAI\'s Head Chatbot',
-        text: 'Her comedy special crashed my language model. Would recommend.'
-    },
     // {
     //     image: 'dalle',
     //     name: 'Dall-E',
@@ -98,6 +122,5 @@ const testimonials = [
         text: 'Moriel’s comedy is so clever, I had to run a full query to keep up.'
     }
 ]
-shuffleArray(testimonials)
-const model = ref(testimonials[2])
+const model = ref(0)
 </script>
