@@ -23,6 +23,7 @@
             max-width="350"
             style="height: auto;"
             hide-delimiters
+            :show-arrows="false"
             cycle
         >
             <v-carousel-item
