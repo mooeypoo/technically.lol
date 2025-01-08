@@ -6,16 +6,14 @@
                     <v-item v-slot="{ isSelected }" :value="intro.name">
                         <v-btn
                         :border="isSelected ? 'thin primary opacity-50' : undefined"
-                        :stacked="!display.xs"
-                        :icon="!!display.xs"
                         :ripple="false"
                         variant="flat"
                         :color="isSelected ? 'primary' : 'surface'"
-                        :size="display.xs ? 'large' : 'small'"
+                        :size="display.xs ? 'small' : 'large'"
                         @click="model = intro.name"
                         >
                             <v-icon :icon="intro.icon" />
-                            <span v-if="!display.xs">{{ intro.label }}</span>
+                            {{ intro.label }}
                         </v-btn>
                     </v-item>
                 </v-col>
@@ -29,7 +27,7 @@
             :show-arrows="false"
         >
             <v-carousel-item v-for="intro in intros" :key="intro.name" :value="intro.name">
-                <v-card class="mx-auto">
+                <v-card class="mx-auto" color="accent">
                     <v-card-title>
                         <v-icon :icon="intro.icon" />
                         {{ intro.label }}

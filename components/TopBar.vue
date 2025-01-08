@@ -1,13 +1,14 @@
 <template>
-    <v-app-bar :elevation="display.xs ? '0' : '2'">
+    <v-app-bar :elevation="display.smAndDown ? '0' : '2'">
         <v-avatar size="64" :image="images[siteAvatar]"></v-avatar>
-        <v-app-bar-title v-if="display.xs">
+        <v-app-bar-title v-if="display.mdAndDown">
             <p>Moriel Schottlender</p>
             <p>{{ themeTitle }}</p>
         </v-app-bar-title>
         <v-app-bar-title v-else>Moriel Schottlender 🎤 {{ themeTitle }}</v-app-bar-title>
-        <!-- <v-spacer></v-spacer> -->
-        <!-- <TemplateSwitcher /> -->
+        <v-spacer v-if="display.mdAndUp"></v-spacer>
+        <span v-if="display.mdAndUp" class="mx-2 text-overline">Change vibe:</span>
+        <TemplateSwitcher v-if="display.mdAndUp" />
     </v-app-bar>
 </template>
 

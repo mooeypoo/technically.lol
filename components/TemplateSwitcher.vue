@@ -8,8 +8,8 @@
         size="x-small"
         variant="outlined"
     >
-            <v-btn miltiline size="x-small" value="corporate">Corporate Vibe</v-btn>
-            <v-btn miltiline size="x-small" value="afterhours">Afterhours Vibe</v-btn>
+            <v-btn miltiline size="x-small" value="corporate">Corporate</v-btn>
+            <v-btn miltiline size="x-small" value="afterhours">Afterhours</v-btn>
     </v-btn-toggle>
 
 </template>

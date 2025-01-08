@@ -2,6 +2,14 @@
   <NuxtLayout>
     <v-app>
       <TopBar />
+
+      <v-app-bar v-if="display.smAndDown" elevation="0">
+        <div class="mx-auto">
+          <span class="mx-2 text-overline">Change vibe:</span>
+          <TemplateSwitcher />
+          </div>
+      </v-app-bar>
+
       <v-main>
         <v-container max-width="900px" class="text-center">
           <v-card height="220" dark image="~/assets/img/onstage.jpg" class="hero-section d-flex align-center justify-center flex-wrap text-center mx-auto px-4">
