@@ -6,6 +6,8 @@
             <p>{{ themeTitle }}</p>
         </v-app-bar-title>
         <v-app-bar-title v-else>Moriel Schottlender 🎤 {{ themeTitle }}</v-app-bar-title>
+        <!-- <v-spacer></v-spacer> -->
+        <!-- <TemplateSwitcher /> -->
     </v-app-bar>
 </template>
 
@@ -14,6 +16,7 @@ import { ref, onMounted } from 'vue'
 import { useDisplay } from 'vuetify'
 import { filename } from 'pathe/utils';
 import { useThemeAbstraction } from '../use/useThemeAbstraction'
+// import TemplateSwitcher from './TemplateSwitcher.vue';
 
 const { siteTitle, siteAvatar } = useThemeAbstraction()
 const themeTitle = ref(siteTitle)

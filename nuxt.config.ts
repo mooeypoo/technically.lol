@@ -20,7 +20,8 @@ export default defineNuxtConfig({
       })
     },
     '@nuxt/fonts',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@nuxt/content'
     //...
   ],
   vite: {

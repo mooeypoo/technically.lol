@@ -1,22 +1,22 @@
 <template>
     <v-container fluid>
         <v-item-group v-model="model" class="mb-4">
-            <v-row justify="center">
-            <v-col v-for="(testimonial, i) in testimonials" :key="i" cols="auto" class="pa-2">
-                <v-item v-slot="{ isSelected }" :value="testimonial">
-                    <v-btn
-                    :border="isSelected ? 'thin primary opacity-50' : undefined"
-                    icon
-                    :ripple="false"
-                    variant="flat"
-                    :color="isSelected ? 'primary' : 'surface'"
-                    @click="model = i"
-                    >
-                    <v-avatar :image="images['logo-' + testimonial.image]" />
-                    </v-btn>
-                </v-item>
-            </v-col>
-        </v-row>
+                <v-row justify="center">
+                <v-col v-for="(testimonial, i) in testimonials" :key="i" cols="auto" class="pa-2">
+                    <v-item v-slot="{ isSelected }" :value="testimonial">
+                        <v-btn
+                        :border="isSelected ? 'thin primary opacity-50' : undefined"
+                        icon
+                        :ripple="false"
+                        variant="flat"
+                        :color="isSelected ? 'primary' : 'surface'"
+                        @click="model = i"
+                        >
+                        <v-avatar :image="images['logo-' + testimonial.image]" />
+                        </v-btn>
+                    </v-item>
+                </v-col>
+            </v-row>
         </v-item-group>
         <v-carousel
             v-model="model"
