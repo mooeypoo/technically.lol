@@ -9,7 +9,7 @@
                         :ripple="false"
                         variant="flat"
                         :color="isSelected ? 'primary' : 'surface'"
-                        :size="display.xs ? 'small' : 'large'"
+                        :size="xs ? 'small' : 'large'"
                         @click="model = intro.name"
                         >
                             <v-icon :icon="intro.icon" />
@@ -43,7 +43,7 @@
 
 <script setup>
 import { useDisplay } from 'vuetify'
-const display = ref(useDisplay())
+const { xs } = ref(useDisplay())
 
 const model = ref('general')
 
