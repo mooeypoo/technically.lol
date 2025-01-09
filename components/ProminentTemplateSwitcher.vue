@@ -26,8 +26,8 @@
                             <v-icon color="primary" v-if="siteTheme === 'corporate'">mdi-microphone-variant</v-icon>
                         </h3>
                         <!-- <v-divider class="my-2" /> -->
-                        <v-btn v-if="siteTheme === 'corporate'" @click="siteTheme = 'corporate'" variant="tonal" size="x-small">This sfw style</v-btn>
-                        <v-btn v-else @click="siteTheme = 'corporate'" variant="tonal" size="x-small">Click for SFW style</v-btn>
+                        <v-btn v-if="siteTheme === 'corporate'" @click="siteTheme = 'corporate'" read-only variant="tonal" size="x-small">You're experiencing the SFW vibe</v-btn>
+                        <v-btn v-else @click="siteTheme = 'corporate'" variant="tonal" size="x-small">Click for SFW vibe</v-btn>
                     </v-card-item>
                     <v-card-item class="text-left pt-2">
                             <p>Looking for a fresh way to energize your next corporate event? Moriel brings the perfect blend of sharp wit and relatable, workplace-friendly comedy that resonates with tech teams, leadership, and employees alike.</p>
@@ -59,7 +59,7 @@
                         </h3>
                         <!-- <v-divider class="my-2" /> -->
                         <!-- <v-btn @click="siteTheme = 'corporate'" variant="tonal" size="x-small">{{siteTheme === 'afterhours' ? 'This' : 'Click to Switch'}} Style</v-btn> -->
-                        <v-btn v-if="siteTheme === 'afterhours'" @click="siteTheme = 'afterhours'" variant="tonal" size="x-small">This afterhours vibe</v-btn>
+                        <v-btn v-if="siteTheme === 'afterhours'" @click="siteTheme = 'afterhours'" variant="tonal" size="x-small">You're experiencing the afterhours vibe</v-btn>
                         <v-btn v-else @click="siteTheme = 'afterhours'" variant="tonal" size="x-small">Click for Afterhours Vibe</v-btn>
                     </v-card-item>
                     <v-card-item class="text-left pt-2">
@@ -86,14 +86,10 @@ const images = Object.fromEntries(
 const items = [
     {
         title: 'Corporate Comedy',
-        text: `It's New Release Friday`,
-        subtext: 'Newly released songs.',
         img: images['moriel-gotham1'],
     },
     {
         title: 'Afterhours Comedy',
-        text: 'Greatest Rock Hits',
-        subtext: 'Lose yourself in rock tunes.',
         img: images['moriel-gotham2'],
     }
 ]
