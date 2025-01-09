@@ -1,3 +1,7 @@
+---
+title: "Moriel Schottlender: Technically Funny"
+---
+
 I'm a Software Engineer that can make you laugh about working in **Tech**, working **with Tech**, or working **on Tech**.
 <br />
 

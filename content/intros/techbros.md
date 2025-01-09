@@ -1,3 +1,7 @@
+---
+title: "Moriel Schottlender: Technically Funny"
+---
+
 I'm a **10x Software Engineer** that exposes the system by WTFing it.
 
 Hey, my joke blockchain lineup is like **crypto for Musk**, laugh-ensured with **Typescript level validation**.

@@ -94,7 +94,6 @@ const vuetifyTheme = useTheme()
 // Watch the pinia store's definition of the theme and update the global theme accordingly
 watch(siteTheme, (newTheme) => {
   vuetifyTheme.global.name.value = newTheme === 'corporate' ? 'corporateTheme' : 'afterhoursTheme'
-  // console.log('theTheme in app.vue', theTheme.value)
 })
 </script>
 
