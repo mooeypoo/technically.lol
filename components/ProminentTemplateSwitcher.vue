@@ -1,6 +1,5 @@
 <template>
     <v-row
-      align="top"
       class="fill-height"
       justify="center"
     >

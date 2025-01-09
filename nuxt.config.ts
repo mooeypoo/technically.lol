@@ -9,6 +9,20 @@ export default defineNuxtConfig({
       title: 'Moriel Schottlender : Technically Funny'
     }
   },
+  seo: {
+    meta: {
+      description: 'Moriel Schottlender is a software engineer, comedian, and writer. She is passionate about making technology more accessible and inclusive.',
+      author: 'Moriel Schottlender',
+      applicationName: 'Technically Funny',
+      ogSiteName: 'Moriel Schottlender: Technically Funny',
+      ogLocale: 'en_US',
+      ogType: 'website',
+      ogUrl: 'https://technically.lol',
+      ogTitle: 'Moriel Schottlender: Technically Funny',
+      ogImage: 'https://technically.lil/moriel-comedy.png',
+      robots: 'index, follow',
+    }
+  },
   build: {
     transpile: ['vuetify'],
   },
@@ -21,7 +35,8 @@ export default defineNuxtConfig({
     },
     '@nuxt/fonts',
     '@pinia/nuxt',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/seo',
     //...
   ],
   vite: {
