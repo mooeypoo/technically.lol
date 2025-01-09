@@ -9,7 +9,7 @@
                         :ripple="false"
                         variant="flat"
                         :color="isSelected ? 'primary' : 'surface'"
-                        :size="xs ? 'small' : 'large'"
+                        size="small"
                         @click="model = intro.name"
                         >
                             <v-icon :icon="intro.icon" />
@@ -42,9 +42,6 @@
 </template>
 
 <script setup>
-import { useDisplay } from 'vuetify'
-const { xs } = ref(useDisplay())
-
 const model = ref('general')
 
 const intros = [
@@ -81,11 +78,4 @@ const intros = [
         margin: 0.5rem 0;
     }
 }
-// .intro-switcher {
-//     .text-primary {
-//         color: black !important;
-//     }
-//     // .v-btn__content {
-//     // }
-// }
 </style>
