@@ -217,7 +217,7 @@ const _3UQhYnUjcR = (function(nitro) {
 
 const rootDir = "/home/moriel/code/projects/technically.lol";
 
-const appHead = {"link":[],"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"},{"property":"og:type","content":"website"}],"style":[],"script":[],"noscript":[],"title":"Moriel Schottlender : Technically Funny","htmlAttrs":{}};
+const appHead = {"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"},{"rel":"icon","type":"image/png","sizes":"32x32","href":"/favicon.png"}],"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"},{"property":"og:type","content":"website"}],"style":[],"script":[],"noscript":[],"title":"Moriel Schottlender : Technically Funny","htmlAttrs":{}};
 
 const appRootTag = "div";
 

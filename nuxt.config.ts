@@ -6,7 +6,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      title: 'Moriel Schottlender : Technically Funny'
+      title: 'Moriel Schottlender : Technically Funny',
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon.png' },
+      ]
     }
   },
   seo: {
