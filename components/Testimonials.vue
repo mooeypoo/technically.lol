@@ -78,7 +78,6 @@ const shuffleArray = (array) => {
   }
 }
 
-console.log(images)
 const testimonials = [
     {
         image: 'chatgpt',
