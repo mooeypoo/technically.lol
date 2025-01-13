@@ -35,6 +35,17 @@
                     <v-card-text class="intro-text px-4">
                         <ContentDoc :path="`intros/${intro.name}`" />
                     </v-card-text>
+                    <v-card-item>
+                        <v-btn
+                            href="https://github.com/mooeypoo/technically.lol"
+                            target="_blank"
+                            size="small"
+                            variant="outlined"
+                        >
+                            <v-icon>mdi-github</v-icon>
+                            {{ intro.github }}
+                        </v-btn>
+                    </v-card-item>
                 </v-card>
             </v-carousel-item>
         </v-carousel>
@@ -49,21 +60,25 @@ const intros = [
         name: 'general',
         label: 'General audience',
         icon: 'mdi-account',
+        github: 'I mean... Look at this website. I totally made it.',
     },
     {
         name: 'tech',
         label: 'Tech audience',
         icon: 'mdi-laptop-account',
+        github: 'Also, I totally made this website.',
     },
     {
         name: 'management',
         label: 'Management',
         icon: 'mdi-handshake',
+        github: 'I totally made this website outside of work hours.',
     },
     {
         name: 'techbros',
         label: 'Tech bros',
         icon: 'mdi-account-cowboy-hat',
+        github: '... and I totally shipped this website.',
     },
 ]
 </script>
