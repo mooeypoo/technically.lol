@@ -1,7 +1,7 @@
 <template>
     <v-card
         class="mx-auto"
-        color="surface"
+        variant="text"
     >
         <v-card-item >
             <div class="reel-embed mx-auto">
@@ -67,5 +67,6 @@ watch(
 .reel iframe {
   border-radius: 10px;
   border: none;
+  overflow: hidden;
 }
 </style>
