@@ -50,6 +50,12 @@
           </v-container>
 
           <v-container max-width="900px" class="text-center">
+            <h2 class="mb-2">Play around</h2>
+            <v-divider class="mb-4" />
+            <Terminal />
+          </v-container>
+
+          <v-container max-width="900px" class="text-center">
             <h2 v-if="siteTheme === 'corporate'" class="mb-2">Engineering expertise</h2>
             <h2 v-else class="mb-2">10x engineer</h2>
             <v-divider class="mb-4" />
@@ -92,6 +98,7 @@ import TopBar from '~/components/TopBar.vue'
 import Testimonials from '~/components/Testimonials.vue'
 import IntroSwitcher from '~/components/IntroSwitcher.vue'
 import InstagramEmbed from '~/components/InstagramEmbed.vue'
+import Terminal from '~/components/Terminal.vue'
 // import TemplateSwitcher from './components/TemplateSwitcher.vue'
 import ProminentTemplateSwitcher from './components/ProminentTemplateSwitcher.vue'
 

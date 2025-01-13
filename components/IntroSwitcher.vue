@@ -36,14 +36,15 @@
                         <ContentDoc :path="`intros/${intro.name}`" />
                     </v-card-text>
                     <v-card-item>
+                        {{ intro.github }}
                         <v-btn
                             href="https://github.com/mooeypoo/technically.lol"
                             target="_blank"
-                            size="small"
+                            size="x-small"
                             variant="outlined"
                         >
                             <v-icon>mdi-github</v-icon>
-                            {{ intro.github }}
+                            See source
                         </v-btn>
                     </v-card-item>
                 </v-card>
