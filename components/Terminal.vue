@@ -1,5 +1,5 @@
 <template>
-    <div class="terminal">
+    <div class="terminal" @click="focusInput">
       <div class="terminal-header">
         <div class="buttons">
           <span class="button red"></span>
