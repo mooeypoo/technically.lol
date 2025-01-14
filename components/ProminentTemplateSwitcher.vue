@@ -32,6 +32,16 @@
                     <v-card-item class="text-left pt-2">
                             <p>Looking for a fresh way to energize your next corporate event? Moriel brings the perfect blend of sharp wit and relatable, workplace-friendly comedy that resonates with tech teams, leadership, and employees alike.</p>
                     </v-card-item>
+                    <v-card-item class="pt-0">
+                        <v-btn
+                            v-if="siteTheme === 'afterhours'"
+                            color="primary"
+                            size="x-small"
+                            @click="siteTheme = 'corporate'"
+                        >
+                            Switch to this vibe
+                        </v-btn>
+                    </v-card-item>
                 </v-card>
             </v-hover>
         </v-col>
@@ -64,6 +74,16 @@
                     </v-card-item>
                     <v-card-item class="text-left pt-2">
                         <p>Turn up the energy at your afterhours event, meet Moriel — <em>"The Lesbian Techbro"</em> — a software engineer and comedian who brings an unapologetically bold, hilarious perspective to the stage.</p>
+                    </v-card-item>
+                    <v-card-item class="pt-0">
+                        <v-btn
+                            v-if="siteTheme === 'corporate'"
+                            color="primary"
+                            size="x-small"
+                            @click="siteTheme = 'afterhours'"
+                        >
+                            Switch to this vibe
+                        </v-btn>
                     </v-card-item>
                 </v-card>
             </v-hover>
