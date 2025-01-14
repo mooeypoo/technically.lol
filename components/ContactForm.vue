@@ -6,7 +6,6 @@
         data-netlify="true"
         @submit.prevent="handleSubmit"
       >
-
         <v-text-field
           v-model="formName"
           label="Name"
