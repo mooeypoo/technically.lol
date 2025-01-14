@@ -92,7 +92,7 @@ const handleCommand = async () => {
     }
     currentInput.value = ''
     await nextTick()
-    terminalBodyRef.value.scrollTop = terminalBodyRef.scrollHeight;
+    terminalBodyRef.value.scrollTop = terminalBodyRef.value.scrollHeight;
 }
 
 const focusInput = (event) => {
