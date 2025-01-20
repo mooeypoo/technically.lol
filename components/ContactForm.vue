@@ -32,33 +32,39 @@
       >
         <div hidden>
           <label>
-            Don’t fill this out if you’re human: <input name="bot-field" ref="bot-field" />
+            Don't fill this out if you're human: <input name="bot-field" ref="bot-field" />
           </label>
         </div>
         <input type="hidden" name="form-name" value="Contact" />
-        <v-text-field
-          v-model="formName"
-          label="Name"
-          name="name"
-          required
-        ></v-text-field>
+        <label for="name">Name:
+          <input
+            v-model="formName"
+            type="text"
+            label="Name"
+            name="name"
+            required
+          ></input>
+        </label>
 
-        <v-text-field
-          v-model="formEmail"
-          label="Email"
-          name="email"
-          type="email"
-          required
-        ></v-text-field>
+        <label for="email">Email:
+          <input
+            v-model="formEmail"
+            label="Email"
+            name="email"
+            type="email"
+            required
+          ></input></label>
 
-        <v-textarea
-          v-model="formMessage"
-          label="Message"
-          name="message"
-          required
-        ></v-textarea>
+        <label for="message">Message:
+          <textarea
+            v-model="formMessage"
+            label="Message"
+            name="message"
+            required
+          ></textarea>
+        </label>
 
-        <button type="submit" @click="handleSubmit">Send</button>
+        <button type="submit">Send</button>
       </form>
     </v-card-item>
   </v-card>
@@ -118,3 +124,25 @@ const handleSubmit = async (e) => {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  input, textarea {
+    width: 80%;
+    min-width: 300px;
+    max-width: 400px;
+    padding: 0 1rem;
+    border: 1px solid #7c7c7c;
+    border-radius: 0.25rem;
+    vertical-align: top;
+  }
+
+  textarea {
+    height: 200px;
+  }
+}
+</style>
