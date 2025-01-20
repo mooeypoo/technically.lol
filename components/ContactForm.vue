@@ -25,7 +25,6 @@
       <form
         method="POST"
         name="Contact"
-        @submit.prevent="handleSubmit"
         id="Contact"
         netlify
         data-netlify="true"
@@ -33,7 +32,7 @@
       >
         <div hidden>
           <label>
-            Don’t fill this out if you’re human: <input name="bot-field" />
+            Don’t fill this out if you’re human: <input name="bot-field" ref="bot-field" />
           </label>
         </div>
         <input type="hidden" name="form-name" value="Contact" />
@@ -59,7 +58,7 @@
           required
         ></v-textarea>
 
-        <v-btn type="submit" color="primary">Send</v-btn>
+        <button type="submit" @click="handleSubmit">Send</button>
       </form>
     </v-card-item>
   </v-card>
@@ -71,6 +70,7 @@ import { ref } from 'vue';
 const formName = ref('')
 const formEmail = ref('')
 const formMessage = ref('')
+const formBotField = useTemplateRef('bot-field')
 
 const FormState = {
   IDLE: "IDLE",
@@ -82,8 +82,8 @@ const FormState = {
 const contactFormState = ref(FormState.IDLE)
 
 const handleSubmit = async (e) => {
-  const form = e.target;
-  const formData = new FormData(form);
+  e.preventDefault();
+
   contactFormState.value = FormState.PENDING;
   try {
     const response = await fetch('/', {
@@ -91,7 +91,13 @@ const handleSubmit = async (e) => {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: new URLSearchParams(formData).toString()
+      body: new URLSearchParams({
+        'form-name': 'Contact',
+        'bot-field': formBotField.value.value,
+        name: formName.value,
+        email: formEmail.value,
+        message: formMessage.value,
+      }).toString()
     });
 
     if (response.ok) {
