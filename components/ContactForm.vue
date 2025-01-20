@@ -1,6 +1,27 @@
 <template>
   <v-card>
     <v-card-item>
+      <v-alert
+        v-if="contactFormState === FormState.SUCCESS"
+        type="success"
+        dismissible
+        border="left"
+        elevation="2"
+      >
+        Message sent! Thank you!
+      </v-alert>
+      <v-alert
+        v-if="contactFormState === FormState.ERROR"
+        type="error"
+        dismissible
+        border="left"
+        elevation="2"
+      >
+        Oh no, an error occurred. Please try again!
+      </v-alert>
+
+    </v-card-item>
+    <v-card-item>
       <form
         method="post"
         name="Contact"
@@ -51,29 +72,46 @@ const formName = ref('')
 const formEmail = ref('')
 const formMessage = ref('')
 
+const FormState = {
+  IDLE: "IDLE",
+  PENDING: "PENDING",
+  SUCCESS: "SUCCESS",
+  ERROR: "ERROR",
+}
+
+const contactFormState = ref(FormState.IDLE)
+
 const handleSubmit = async () => {
+  contactFormState.value = FormState.PENDING;
   try {
     const response = await fetch('/', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({
-        'form-name': 'Contact',
-        name: formName.value,
-        email: formEmail.value,
-        message: formMessage.value
-      }).toString()
-    });
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'Contact',
+          name: formName.value,
+          email: formEmail.value,
+          message: formMessage.value
+        }).toString()
+      }
+    );
+
     if (response.ok) {
-      alert('Form submitted successfully!');
+      contactFormState.value = FormState.SUCCESS;
       formName.value = '';
       formEmail.value = '';
       formMessage.value = '';
     } else {
-      alert('Oops, something went wrong! Please try again.');
+      contactFormState.value = FormState.ERROR;
     }
   } catch (error) {
-    console.error('Form submission error:', error);
-    alert('Oops, something went wrong! Please try again.');
+    contactFormState.value = FormState.ERROR;
+    console.log("error sending contact form", error);
+  } finally {
+    setTimeout(() => {
+      contactFormState.value = FormState.IDLE;
+    }, 10000);
   }
 };
 </script>
