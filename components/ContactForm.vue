@@ -23,13 +23,13 @@
     </v-card-item>
     <v-card-item>
       <form
-        method="post"
+        method="POST"
         name="Contact"
+        @submit.prevent="handleSubmit"
         id="Contact"
+        netlify
         data-netlify="true"
         data-netlify-honeypot="bot-field" 
-        @submit.prevent="handleSubmit"
-        netlify
       >
         <div hidden>
           <label>
@@ -81,21 +81,18 @@ const FormState = {
 
 const contactFormState = ref(FormState.IDLE)
 
-const handleSubmit = async () => {
+const handleSubmit = async (e) => {
+  const form = e.target;
+  const formData = new FormData(form);
   contactFormState.value = FormState.PENDING;
   try {
     const response = await fetch('/', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          'form-name': 'Contact',
-          name: formName.value,
-          email: formEmail.value,
-          message: formMessage.value
-        }).toString()
-      }
-    );
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams(formData).toString()
+    });
 
     if (response.ok) {
       contactFormState.value = FormState.SUCCESS;
