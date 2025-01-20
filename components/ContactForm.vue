@@ -1,10 +1,12 @@
 <template>
   <v-card>
     <v-card-item>
-      <v-form
-        ref="form"
+      <form
+        method="post"
+        name="contact"
         data-netlify="true"
         @submit.prevent="handleSubmit"
+        netlify
       >
         <v-text-field
           v-model="formName"
@@ -29,7 +31,7 @@
         ></v-textarea>
 
         <v-btn type="submit" color="primary">Send</v-btn>
-      </v-form>
+      </form>
     </v-card-item>
   </v-card>
 </template>
