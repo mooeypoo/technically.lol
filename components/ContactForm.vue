@@ -39,7 +39,7 @@
           <v-text-field
             v-model="formName"
             label="Name"
-            name="name"
+            name="fullname"
             required
           ></v-text-field>
 
@@ -95,7 +95,7 @@ const handleSubmit = async (e) => {
         'form-name': 'Contact',
         'bot-field': formBotField.value.value,
         name: formName.value,
-        email: formEmail.value,
+        fullname: formEmail.value,
         message: formMessage.value,
       }).toString()
     });
