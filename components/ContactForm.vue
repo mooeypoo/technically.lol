@@ -4,10 +4,18 @@
       <form
         method="post"
         name="Contact"
+        id="Contact"
         data-netlify="true"
+        data-netlify-honeypot="bot-field" 
         @submit.prevent="handleSubmit"
         netlify
       >
+        <div hidden>
+          <label>
+            Don’t fill this out if you’re human: <input name="bot-field" />
+          </label>
+        </div>
+        <input type="hidden" name="form-name" value="Contact" />
         <v-text-field
           v-model="formName"
           label="Name"
