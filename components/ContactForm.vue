@@ -23,9 +23,9 @@
     </v-card-item>
     <v-card-item>
       <form
+        ref="contactform"
         method="POST"
         name="Contact"
-        @submit.prevent="handleSubmit"
         id="Contact"
         netlify
         data-netlify="true"
@@ -33,7 +33,7 @@
       >
         <div hidden>
           <label>
-            Don’t fill this out if you’re human: <input name="bot-field" />
+            Don’t fill this out if you’re human: <input name="bot-field" ref="bot-field" />
           </label>
         </div>
         <input type="hidden" name="form-name" value="Contact" />
@@ -59,7 +59,7 @@
           required
         ></v-textarea>
 
-        <v-btn type="submit" color="primary">Send</v-btn>
+        <v-btn type="submit" color="primary" @click="handleSubmit">Send</v-btn>
       </form>
     </v-card-item>
   </v-card>
@@ -71,6 +71,7 @@ import { ref } from 'vue';
 const formName = ref('')
 const formEmail = ref('')
 const formMessage = ref('')
+const formBotField = useTemplateRef('bot-field');
 
 const FormState = {
   IDLE: "IDLE",
@@ -82,8 +83,7 @@ const FormState = {
 const contactFormState = ref(FormState.IDLE)
 
 const handleSubmit = async (e) => {
-  const form = e.target;
-  const formData = new FormData(form);
+  e.preventDefault();
   contactFormState.value = FormState.PENDING;
   try {
     const response = await fetch('/', {
@@ -91,7 +91,13 @@ const handleSubmit = async (e) => {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: new URLSearchParams(formData).toString()
+      body: new URLSearchParams({
+        'form-name': 'Contact',
+        'name': formName.value,
+        'email': formEmail.value,
+        'message': formMessage.value,
+        'bot-field': formBotField.value
+      }).toString()
     });
 
     if (response.ok) {
@@ -99,6 +105,7 @@ const handleSubmit = async (e) => {
       formName.value = '';
       formEmail.value = '';
       formMessage.value = '';
+      formBotField.value = '';
     } else {
       contactFormState.value = FormState.ERROR;
     }
@@ -110,5 +117,6 @@ const handleSubmit = async (e) => {
       contactFormState.value = FormState.IDLE;
     }, 10000);
   }
+  
 };
 </script>
