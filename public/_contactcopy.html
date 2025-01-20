@@ -7,18 +7,17 @@
 </head>
 <body>
   <form 
-    name="Contact" 
+    name="contact-me" 
+    id="contact-me"
     method="POST"
     netlify
     data-netlify="true" 
     data-netlify-honeypot="bot-field" 
-    id="Contact"
-    class="hidden"
   >
-    <input type="hidden" name="form-name" value="Contact" />
+    <input type="hidden" name="form-name" value="contact-me" />
     <div hidden>
       <label>
-        Do not fill this out if you are human: <input name="bot-field" ref="bot-field" />
+        Do not fill this out if you are human: <input name="bot-field" />
       </label>
     </div>
     <input type="text" name="fullname" id="fullname" placeholder="Name" required>

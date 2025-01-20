@@ -1,11 +1,11 @@
 <template>
   <form
-    netlify
-    data-netlify="true"
-    data-netlify-honeypot="bot-field" 
+    name="contact-me" 
+    id="contact-me"
     method="POST"
-    name="Contact"
-    id="Contact"
+    netlify
+    data-netlify="true" 
+    data-netlify-honeypot="bot-field" 
   >
     <v-card>
       <v-card-item>
@@ -13,7 +13,6 @@
           v-if="contactFormState === FormState.SUCCESS"
           type="success"
           dismissible
-          border="left"
           elevation="2"
         >
           Message sent! Thank you!
@@ -22,7 +21,6 @@
           v-if="contactFormState === FormState.ERROR"
           type="error"
           dismissible
-          border="left"
           elevation="2"
         >
           Oh no, an error occurred. Please try again!
@@ -35,7 +33,6 @@
               Do not fill this out if you are human: <input name="bot-field" ref="bot-field" />
             </label>
           </div>
-          <input type="hidden" name="form-name" value="Contact" />
           <v-text-field
             v-model="formName"
             label="Name"
@@ -92,7 +89,7 @@ const handleSubmit = async (e) => {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams({
-        'form-name': 'Contact',
+        'form-name': 'contact-me',
         'bot-field': formBotField.value.value,
         fullname: formName.value,
         email: formEmail.value,
