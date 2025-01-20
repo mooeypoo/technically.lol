@@ -3,7 +3,7 @@
     <v-card-item>
       <form
         method="post"
-        name="contact"
+        name="Contact"
         data-netlify="true"
         @submit.prevent="handleSubmit"
         netlify
@@ -49,7 +49,7 @@ const handleSubmit = async () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({
-        'form-name': 'contact',
+        'form-name': 'Contact',
         name: formName.value,
         email: formEmail.value,
         message: formMessage.value
