@@ -25,15 +25,14 @@
       <form
         method="POST"
         name="Contact"
-        @submit.prevent="handleSubmit"
         id="Contact"
         netlify
         data-netlify="true"
-        data-netlify-honeypot="bot-field" 
+        data-netlify-honeypot="bot-field"
       >
         <div hidden>
           <label>
-            Don’t fill this out if you’re human: <input name="bot-field" />
+            Don't fill this out if you're human: <input name="bot-field" />
           </label>
         </div>
         <input type="hidden" name="form-name" value="Contact" />
