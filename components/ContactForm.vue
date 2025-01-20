@@ -1,73 +1,67 @@
 <template>
-  <v-card>
-    <v-card-item>
-      <v-alert
-        v-if="contactFormState === FormState.SUCCESS"
-        type="success"
-        dismissible
-        border="left"
-        elevation="2"
-      >
-        Message sent! Thank you!
-      </v-alert>
-      <v-alert
-        v-if="contactFormState === FormState.ERROR"
-        type="error"
-        dismissible
-        border="left"
-        elevation="2"
-      >
-        Oh no, an error occurred. Please try again!
-      </v-alert>
+  <form
+    netlify
+    data-netlify="true"
+    data-netlify-honeypot="bot-field" 
+    method="POST"
+    name="Contact"
+    id="Contact"
+  >
+    <v-card>
+      <v-card-item>
+        <v-alert
+          v-if="contactFormState === FormState.SUCCESS"
+          type="success"
+          dismissible
+          border="left"
+          elevation="2"
+        >
+          Message sent! Thank you!
+        </v-alert>
+        <v-alert
+          v-if="contactFormState === FormState.ERROR"
+          type="error"
+          dismissible
+          border="left"
+          elevation="2"
+        >
+          Oh no, an error occurred. Please try again!
+        </v-alert>
 
-    </v-card-item>
-    <v-card-item>
-      <form
-        method="POST"
-        name="Contact"
-        id="Contact"
-        netlify
-        data-netlify="true"
-        data-netlify-honeypot="bot-field" 
-      >
-        <div hidden>
-          <label>
-            Don't fill this out if you're human: <input name="bot-field" ref="bot-field" />
-          </label>
-        </div>
-        <input type="hidden" name="form-name" value="Contact" />
-        <label for="name">Name:
-          <input
+      </v-card-item>
+      <v-card-item>
+          <div hidden>
+            <label>
+              Do not fill this out if you are human: <input name="bot-field" ref="bot-field" />
+            </label>
+          </div>
+          <input type="hidden" name="form-name" value="Contact" />
+          <v-text-field
             v-model="formName"
-            type="text"
             label="Name"
             name="name"
             required
-          ></input>
-        </label>
+          ></v-text-field>
 
-        <label for="email">Email:
-          <input
+          <v-text-field
             v-model="formEmail"
             label="Email"
             name="email"
             type="email"
             required
-          ></input></label>
+          ></v-text-field>
 
-        <label for="message">Message:
-          <textarea
+          <v-textarea
             v-model="formMessage"
             label="Message"
             name="message"
             required
-          ></textarea>
-        </label>
+          ></v-textarea>
 
-        <button type="submit">Send</button>
-      </form>
-    </v-card-item>
-  </v-card>
+          <button type="submit" @click="handleSubmit">Send</button>
+      </v-card-item>
+    </v-card>
+  </form>
 </template>
 
 <script setup>
@@ -124,25 +118,3 @@ const handleSubmit = async (e) => {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  input, textarea {
-    width: 80%;
-    min-width: 300px;
-    max-width: 400px;
-    padding: 0 1rem;
-    border: 1px solid #7c7c7c;
-    border-radius: 0.25rem;
-    vertical-align: top;
-  }
-
-  textarea {
-    height: 200px;
-  }
-}
-</style>
