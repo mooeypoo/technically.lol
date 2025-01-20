@@ -94,8 +94,8 @@ const handleSubmit = async (e) => {
       body: new URLSearchParams({
         'form-name': 'Contact',
         'bot-field': formBotField.value.value,
-        name: formName.value,
-        fullname: formEmail.value,
+        fullname: formName.value,
+        email: formEmail.value,
         message: formMessage.value,
       }).toString()
     });
