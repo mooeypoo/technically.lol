@@ -34,6 +34,7 @@
         </v-alert>
       </v-card-item>
       <v-card-item>
+        <input type="hidden" name="form-name" value="contact-me" />
         <div hidden>
           <label>
             Do not fill this out if you are human: <input name="bot-field" v-model="formBotField" />

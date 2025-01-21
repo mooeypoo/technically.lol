@@ -678,6 +678,11 @@ const _inlineRuntimeConfig = {
         "_priority": -5,
         "url": "http://localhost:8888",
         "name": "technicallylol"
+      },
+      {
+        "_priority": -3,
+        "_context": "nuxt-site-config:config",
+        "url": "https://technically.lol"
       }
     ],
     "version": "3.0.6",
@@ -6424,6 +6429,10 @@ const pagePaths = [
   {
     "title": "",
     "link": "/"
+  },
+  {
+    "title": "",
+    "link": "/thanks"
   }
 ];
 
@@ -11055,6 +11064,9 @@ const sources$1 = [
             },
             {
                 "loc": "/"
+            },
+            {
+                "loc": "/thanks"
             }
         ],
         "sourceType": "app"
