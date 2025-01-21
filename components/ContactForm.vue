@@ -83,7 +83,7 @@ const handleSubmit = async (e) => {
 
   contactFormState.value = FormState.PENDING;
   try {
-    const response = await fetch('', {
+    const response = await fetch('/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

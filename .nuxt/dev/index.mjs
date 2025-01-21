@@ -6410,7 +6410,12 @@ const _cRp0dC = defineEventHandler(async (e) => {
   );
 });
 
-const pagePaths = [];
+const pagePaths = [
+  {
+    "title": "",
+    "link": "/"
+  }
+];
 
 const merger = createDefu((obj, key, value) => {
   if (Array.isArray(obj[key]) && Array.isArray(value))
@@ -11035,7 +11040,9 @@ const sources$1 = [
             ]
         },
         "urls": [
-            "/"
+            {
+                "loc": "/"
+            }
         ],
         "sourceType": "app"
     }
