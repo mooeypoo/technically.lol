@@ -6,6 +6,7 @@
     netlify
     data-netlify="true" 
     data-netlify-honeypot="bot-field" 
+    @submit.prevent="handleSubmit"
   >
     <v-card>
       <v-card-item>
@@ -30,37 +31,33 @@
         >
           Oops, there are missing fields!
         </v-alert>
-
       </v-card-item>
       <v-card-item>
-          <div hidden>
-            <label>
-              Do not fill this out if you are human: <input name="bot-field" ref="bot-field" />
-            </label>
-          </div>
-          <v-text-field
-            v-model="formName"
-            label="Name"
-            name="fullname"
-            required
-          ></v-text-field>
-
-          <v-text-field
-            v-model="formEmail"
-            label="Email"
-            name="email"
-            type="email"
-            required
-          ></v-text-field>
-
-          <v-textarea
-            v-model="formMessage"
-            label="Message"
-            name="message"
-            required
-          ></v-textarea>
-
-          <v-btn type="submit" color="primary" @click="handleSubmit">Send</v-btn>
+        <div hidden>
+          <label>
+            Do not fill this out if you are human: <input name="bot-field" v-model="formBotField" />
+          </label>
+        </div>
+        <v-text-field
+          v-model="formName"
+          label="Name"
+          name="fullname"
+          required
+        ></v-text-field>
+        <v-text-field
+          v-model="formEmail"
+          label="Email"
+          name="email"
+          type="email"
+          required
+        ></v-text-field>
+        <v-textarea
+          v-model="formMessage"
+          label="Message"
+          name="message"
+          required
+        ></v-textarea>
+        <v-btn type="submit" color="primary">Send</v-btn>
       </v-card-item>
     </v-card>
   </form>
@@ -72,7 +69,7 @@ import { ref } from 'vue';
 const formName = ref('')
 const formEmail = ref('')
 const formMessage = ref('')
-const formBotField = useTemplateRef('bot-field')
+const formBotField = ref('')
 
 const FormState = {
   IDLE: "IDLE",
@@ -84,9 +81,7 @@ const FormState = {
 
 const contactFormState = ref(FormState.IDLE)
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-
+const handleSubmit = async () => {
   if (formName.value === '' || formEmail.value === '' || formMessage.value === '') {
     contactFormState.value = FormState.EMPTY;
     return false;
@@ -94,14 +89,14 @@ const handleSubmit = async (e) => {
 
   contactFormState.value = FormState.PENDING;
   try {
-    const response = await fetch('/contact', {
+    const response = await fetch('/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams({
         'form-name': 'contact-me',
-        'bot-field': formBotField.value.value,
+        'bot-field': formBotField.value,
         fullname: formName.value,
         email: formEmail.value,
         message: formMessage.value,
