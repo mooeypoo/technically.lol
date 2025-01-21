@@ -485,7 +485,7 @@ const _inlineRuntimeConfig = {
         "tr": "prose-tr"
       },
       "highlight": false,
-      "wsUrl": "ws://localhost:4000/",
+      "wsUrl": "ws://localhost:4001/",
       "documentDriven": false,
       "host": "",
       "trailingSlash": false,
@@ -672,12 +672,6 @@ const _inlineRuntimeConfig = {
         "_context": "package.json",
         "_priority": -10,
         "name": "nuxt-app"
-      },
-      {
-        "_context": "vendorEnv",
-        "_priority": -5,
-        "url": "http://localhost:8888",
-        "name": "technicallylol"
       },
       {
         "_priority": -3,
