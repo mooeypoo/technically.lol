@@ -672,6 +672,12 @@ const _inlineRuntimeConfig = {
         "_context": "package.json",
         "_priority": -10,
         "name": "nuxt-app"
+      },
+      {
+        "_context": "vendorEnv",
+        "_priority": -5,
+        "url": "http://localhost:8888",
+        "name": "technicallylol"
       }
     ],
     "version": "3.0.6",
@@ -6413,6 +6419,10 @@ const _cRp0dC = defineEventHandler(async (e) => {
 const pagePaths = [
   {
     "title": "",
+    "link": "/contact"
+  },
+  {
+    "title": "",
     "link": "/"
   }
 ];
@@ -11040,6 +11050,9 @@ const sources$1 = [
             ]
         },
         "urls": [
+            {
+                "loc": "/contact"
+            },
             {
                 "loc": "/"
             }

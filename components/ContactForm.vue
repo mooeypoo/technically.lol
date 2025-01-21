@@ -12,18 +12,23 @@
         <v-alert
           v-if="contactFormState === FormState.SUCCESS"
           type="success"
-          dismissible
           elevation="2"
         >
           Message sent! Thank you!
         </v-alert>
         <v-alert
           v-if="contactFormState === FormState.ERROR"
-          type="error"
-          dismissible
+          type="warning"
           elevation="2"
         >
           Oh no, an error occurred. Please try again!
+        </v-alert>
+        <v-alert
+          v-if="contactFormState === FormState.EMPTY"
+          type="warning"
+          elevation="2"
+        >
+          Oops, there are missing fields!
         </v-alert>
 
       </v-card-item>
@@ -55,7 +60,7 @@
             required
           ></v-textarea>
 
-          <button type="submit" @click="handleSubmit">Send</button>
+          <v-btn type="submit" color="primary" @click="handleSubmit">Send</v-btn>
       </v-card-item>
     </v-card>
   </form>
@@ -74,12 +79,18 @@ const FormState = {
   PENDING: "PENDING",
   SUCCESS: "SUCCESS",
   ERROR: "ERROR",
+  EMPTY: "EMPTY",
 }
 
 const contactFormState = ref(FormState.IDLE)
 
 const handleSubmit = async (e) => {
   e.preventDefault();
+
+  if (formName.value === '' || formEmail.value === '' || formMessage.value === '') {
+    contactFormState.value = FormState.EMPTY;
+    return false;
+  }
 
   contactFormState.value = FormState.PENDING;
   try {
