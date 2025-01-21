@@ -3,6 +3,18 @@
       <v-main>
         <TopBar />
 
+        <v-container max-width="900px" class="text-center">
+          <v-card height="220" dark image="~/assets/img/onstage.jpg" class="hero-section d-flex align-center justify-center flex-wrap text-center mx-auto px-4">
+              <template #image>
+                  <v-img gradient="to bottom, rgba(39, 39, 39, .5), rgba(39, 39, 39, .9)" />
+              </template>
+              <v-card-title class="text-white">
+                  <h2 class="text-white">Moriel Schottlender</h2>
+                  <p>Where code meets comedy</p>
+              </v-card-title>
+          </v-card>
+        </v-container>
+
         <v-app-bar v-if="display.smAndDown" elevation="0">
         <div class="mx-auto">
             <span class="mx-2 text-overline">Change vibe:</span>

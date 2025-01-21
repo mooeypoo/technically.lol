@@ -1,15 +1,4 @@
 <template>
-    <v-container max-width="900px" class="text-center">
-        <v-card height="220" dark image="~/assets/img/onstage.jpg" class="hero-section d-flex align-center justify-center flex-wrap text-center mx-auto px-4">
-        <template #image>
-            <v-img gradient="to bottom, rgba(39, 39, 39, .5), rgba(39, 39, 39, .9)" />
-        </template>
-        <v-card-title class="text-white">
-            <h2 class="text-white">Moriel Schottlender</h2>
-            <p>Where code meets comedy</p>
-        </v-card-title>
-        </v-card>
-        </v-container>
 
         <v-container max-width="900px" class="text-center">
         <h2 class="mb-2">Comedy for any events</h2>
