@@ -1,12 +1,13 @@
 <template>
   <form
-    name="contact-me" 
+    name="contact-me"
+    action="/thanks"
     id="contact-me"
     method="POST"
     netlify
     data-netlify="true" 
     data-netlify-honeypot="bot-field" 
-    @submit.prevent="handleSubmit"
+    netlify-honeypot="bot-field" 
   >
     <v-card>
       <v-card-item>
@@ -57,7 +58,7 @@
           name="message"
           required
         ></v-textarea>
-        <v-btn type="submit" color="primary">Send</v-btn>
+        <input type="submit" color="primary" value="SEND" />
       </v-card-item>
     </v-card>
   </form>
@@ -89,7 +90,8 @@ const handleSubmit = async () => {
 
   contactFormState.value = FormState.PENDING;
   try {
-    const response = await fetch('/', {
+    debugger
+    const response = await fetch('/thanks', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -110,10 +112,11 @@ const handleSubmit = async () => {
       formMessage.value = '';
     } else {
       contactFormState.value = FormState.ERROR;
+      console.log("Contact form: response not ok", error);
     }
   } catch (error) {
     contactFormState.value = FormState.ERROR;
-    console.log("error sending contact form", error);
+    console.log("Contact form: error sending contact form", error);
   } finally {
     setTimeout(() => {
       contactFormState.value = FormState.IDLE;
