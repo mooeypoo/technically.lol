@@ -18,20 +18,17 @@
           </label>
         </div>
         <v-text-field
-          v-model="formName"
           label="Name"
           name="fullname"
           required
         ></v-text-field>
         <v-text-field
-          v-model="formEmail"
           label="Email"
           name="email"
           type="email"
           required
         ></v-text-field>
         <v-textarea
-          v-model="formMessage"
           label="Message"
           name="message"
           required
