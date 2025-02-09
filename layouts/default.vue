@@ -10,7 +10,7 @@
               </template>
               <v-card-title class="text-white">
                   <h2 class="text-white">Moriel Schottlender</h2>
-                  <p>Where code meets comedy</p>
+                  <p>If you don't think I'm funny, go debug yourself</p>
               </v-card-title>
           </v-card>
         </v-container>
